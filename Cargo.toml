@@ -1,6 +1,7 @@
+
 [workspace]
-resolver = "2"
-members = []
+resolver = '2'
+members = ['lib/rust/mediatr']
 
 [profile.release]
 lto = true
