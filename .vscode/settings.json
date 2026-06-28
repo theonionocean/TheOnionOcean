@@ -1,5 +1,9 @@
 {
     "conventionalCommits.scopes": [
         "global"
-    ]
+    ],
+    "terminal.integrated.automationProfile.linux": {
+        "path": "/run/current-system/sw/bin/bash",
+        "args": ["-c", "/run/current-system/sw/bin/nix-shell --run \"$2\"", "--"]
+    }
 }

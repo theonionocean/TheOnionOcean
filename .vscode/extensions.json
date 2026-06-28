@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"mkhl.direnv",
+		"rust-lang.rust-analyzer",
+		"vadimcn.vscode-lldb",
+		"fill-labs.dependi",
+		"tamasfe.even-better-toml",
+		"nrwl.angular-console"
+	]
+}
