@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
+    "@monodon/rust": "^3.0.0",
     "nx": "23.0.1"
   }
 }
