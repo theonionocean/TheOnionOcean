@@ -1,8 +1,11 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-}
+mod command;
+mod handler;
+mod mediatr;
+mod mediatr_error;
+mod query;
+
+pub use command::*;
+pub use handler::*;
+pub use mediatr::*;
+pub use mediatr_error::*;
+pub use query::*;
