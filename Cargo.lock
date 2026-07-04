@@ -5,3 +5,7 @@ version = 4
 [[package]]
 name = "mediatr"
 version = "0.1.0"
+
+[[package]]
+name = "prutaj_board"
+version = "0.1.0"

@@ -1,7 +1,10 @@
 
 [workspace]
 resolver = '2'
-members = ['lib/rust/mediatr']
+members = [
+	'lib/rust/mediatr',
+	'apps/rust/prutaj_board',
+]
 
 [profile.release]
 lto = true
