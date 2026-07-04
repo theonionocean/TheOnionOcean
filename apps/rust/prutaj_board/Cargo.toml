@@ -3,8 +3,23 @@ name = "prutaj_board"
 version = "0.1.0"
 edition = "2021"
 
-
 [dependencies]
+mediatr = { path = "../../../lib/rust/mediatr" }
 
+[dependencies.actix-web]
+workspace = true
+
+[dependencies.chrono]
+workspace = true
+
+[dependencies.surrealdb]
+workspace = true
+features = ["kv-rocksdb"]
+
+[dependencies.serde]
+workspace = true
+
+[dependencies.ulid]
+workspace = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

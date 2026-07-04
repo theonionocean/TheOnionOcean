@@ -7,7 +7,11 @@ in
       bun
       biome
       cargo
+      clang
       clippy
+      cmake
+      llvmPackages.libclang
+      pkg-config
       rust-analyzer
       rustfmt
       rustc
@@ -18,5 +22,6 @@ in
     shellHook = ''
       export NX_SKIP_FORMAT=true
       export RUST_SRC_PATH=${pkgs.rustPlatform.rustLibSrc}
+      export LIBCLANG_PATH="${pkgs.lib.makeLibraryPath [pkgs.llvmPackages.libclang.lib]}"
     '';
   }
