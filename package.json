@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@monodon/rust": "^3.0.0",
+    "@nx/docker": "23.0.1",
     "nx": "23.0.1"
   }
 }

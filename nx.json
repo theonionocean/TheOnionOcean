@@ -3,6 +3,17 @@
   "neverConnectToCloud": true,
   "analytics": false,
   "plugins": [
-    "@monodon/rust"
+    "@monodon/rust",
+    {
+      "plugin": "@nx/docker",
+      "options": {
+        "buildTarget": {
+          "name": "docker:build"
+        },
+        "runTarget": {
+          "name": "docker:run"
+        }
+      }
+    }
   ]
 }
