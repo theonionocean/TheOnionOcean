@@ -1,5 +1,10 @@
 {
-	"conventionalCommits.scopes": ["global", "lib/rust/mediatr", "prutaj_board"],
+	"conventionalCommits.scopes": [
+		"global",
+		"lib/rust/mediatr",
+		"prutaj_board",
+		"infra"
+	],
 	"terminal.integrated.automationProfile.linux": {
 		"path": "/run/current-system/sw/bin/bash",
 		"args": ["-c", "/run/current-system/sw/bin/nix-shell --run \"$2\"", "--"]
