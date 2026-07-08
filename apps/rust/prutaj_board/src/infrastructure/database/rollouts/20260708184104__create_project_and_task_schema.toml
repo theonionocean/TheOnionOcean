@@ -1,0 +1,103 @@
+id = "20260708184104__create_project_and_task_schema"
+name = "create_project_and_task_schema"
+source_schema_hash = "18178f344455dbe5384c25d3d18a265292dc4cc8563e4d02fb472c4aa73791f2"
+target_schema_hash = "1f599d95e7464a88cca0bda0d199ab95dbc609b3f80d08f7f59dcf4fb7c7bbfc"
+compatibility = "phased"
+renames = []
+
+[[steps]]
+id = "apply_expand_schema"
+phase = "start"
+kind = "apply_files"
+files = [
+    "database/schema/board/project.surql",
+    "database/schema/board/task.surql",
+]
+
+[[steps]]
+id = "rollback_expand_schema"
+phase = "rollback"
+kind = "remove_entities"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "created_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "created_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "description"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "modified_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "name"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "slug"
+
+[[steps.entities]]
+kind = "field"
+scope = "project"
+name = "updated_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "assigned_to"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "created_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "created_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "description"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "modified_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "status"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "title"
+
+[[steps.entities]]
+kind = "field"
+scope = "task"
+name = "updated_at"
+
+[[steps.entities]]
+kind = "table"
+name = "project"
+
+[[steps.entities]]
+kind = "table"
+name = "task"

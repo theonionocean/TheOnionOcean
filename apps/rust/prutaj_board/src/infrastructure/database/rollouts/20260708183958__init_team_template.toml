@@ -1,0 +1,357 @@
+id = "20260708183958__init_team_template"
+name = "init_team_template"
+source_schema_hash = "ad301433f67ec7108b54797ac5d7a61df8c92f62fa52ae631da3f49731576ac3"
+target_schema_hash = "18178f344455dbe5384c25d3d18a265292dc4cc8563e4d02fb472c4aa73791f2"
+compatibility = "phased"
+renames = []
+
+[[steps]]
+id = "apply_expand_schema"
+phase = "start"
+kind = "apply_files"
+files = [
+    "database/schema/organization/employee_of.surql",
+    "database/schema/organization/functions.surql",
+    "database/schema/organization/organization.surql",
+    "database/schema/organization/organization_invitation.surql",
+    "database/schema/organization/organization_permission.surql",
+    "database/schema/organization/organization_role.surql",
+    "database/schema/team/functions.surql",
+    "database/schema/team/member_of.surql",
+    "database/schema/team/team.surql",
+    "database/schema/user.surql",
+]
+
+[[steps]]
+id = "rollback_expand_schema"
+phase = "rollback"
+kind = "remove_entities"
+
+[[steps.entities]]
+kind = "event"
+scope = "employee_of"
+name = "guard_last_admin"
+
+[[steps.entities]]
+kind = "event"
+scope = "organization"
+name = "setup_organization"
+
+[[steps.entities]]
+kind = "event"
+scope = "organization_invitation"
+name = "on_accept"
+
+[[steps.entities]]
+kind = "field"
+scope = "employee_of"
+name = "joined_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "employee_of"
+name = "role"
+
+[[steps.entities]]
+kind = "field"
+scope = "employee_of"
+name = "status"
+
+[[steps.entities]]
+kind = "field"
+scope = "employee_of"
+name = "title"
+
+[[steps.entities]]
+kind = "field"
+scope = "member_of"
+name = "joined_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "member_of"
+name = "role"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "created_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "legal_name"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "logo"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "name"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "owner"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "slug"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization"
+name = "teams"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "created_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "email"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "expires"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "organization_role"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "teams"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "token"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "used_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_invitation"
+name = "used_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_permission"
+name = "description"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_permission"
+name = "name"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "created_by"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "description"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "kind"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "name"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "organization"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "permissions"
+
+[[steps.entities]]
+kind = "field"
+scope = "organization_role"
+name = "sort_order"
+
+[[steps.entities]]
+kind = "field"
+scope = "team"
+name = "created_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "team"
+name = "name"
+
+[[steps.entities]]
+kind = "field"
+scope = "team"
+name = "organization"
+
+[[steps.entities]]
+kind = "field"
+scope = "team"
+name = "parent"
+
+[[steps.entities]]
+kind = "field"
+scope = "user"
+name = "created_at"
+
+[[steps.entities]]
+kind = "field"
+scope = "user"
+name = "email"
+
+[[steps.entities]]
+kind = "field"
+scope = "user"
+name = "name"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::account::organization::teams"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::account::organization::unit"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::organization::employee"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::organization::permissible"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::organization::role::contains"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::team::get_role"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::team::member_of"
+
+[[steps.entities]]
+kind = "function"
+name = "fn::team::members"
+
+[[steps.entities]]
+kind = "index"
+scope = "employee_of"
+name = "employee_of_by_account"
+
+[[steps.entities]]
+kind = "index"
+scope = "employee_of"
+name = "employee_of_by_organization"
+
+[[steps.entities]]
+kind = "index"
+scope = "employee_of"
+name = "employee_of_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "member_of"
+name = "member_of_by_employee"
+
+[[steps.entities]]
+kind = "index"
+scope = "member_of"
+name = "member_of_by_team"
+
+[[steps.entities]]
+kind = "index"
+scope = "member_of"
+name = "member_of_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "organization"
+name = "organization_slug_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "organization_invitation"
+name = "organization_invitation_token"
+
+[[steps.entities]]
+kind = "index"
+scope = "organization_invitation"
+name = "organization_invitation_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "organization_permission"
+name = "organization_permission_name"
+
+[[steps.entities]]
+kind = "index"
+scope = "organization_role"
+name = "organization_role_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "team"
+name = "team_org_name_unique"
+
+[[steps.entities]]
+kind = "index"
+scope = "user"
+name = "user_email_unique"
+
+[[steps.entities]]
+kind = "table"
+name = "employee_of"
+
+[[steps.entities]]
+kind = "table"
+name = "member_of"
+
+[[steps.entities]]
+kind = "table"
+name = "organization"
+
+[[steps.entities]]
+kind = "table"
+name = "organization_invitation"
+
+[[steps.entities]]
+kind = "table"
+name = "organization_permission"
+
+[[steps.entities]]
+kind = "table"
+name = "organization_role"
+
+[[steps.entities]]
+kind = "table"
+name = "team"
+
+[[steps.entities]]
+kind = "table"
+name = "user"

@@ -1,0 +1,35 @@
+id = "20260708190039__add_unique_project_and_task_indexes"
+name = "add_unique_project_and_task_indexes"
+source_schema_hash = "1f599d95e7464a88cca0bda0d199ab95dbc609b3f80d08f7f59dcf4fb7c7bbfc"
+target_schema_hash = "947cf1343f23f39d52c1e8de6c072f3745fb1d265f43371d97969780eaa7e9ec"
+compatibility = "phased"
+renames = []
+
+[[steps]]
+id = "apply_expand_schema"
+phase = "start"
+kind = "apply_files"
+files = [
+    "database/schema/board/project.surql",
+    "database/schema/board/task.surql",
+]
+
+[[steps]]
+id = "rollback_expand_schema"
+phase = "rollback"
+kind = "remove_entities"
+
+[[steps.entities]]
+kind = "index"
+scope = "project"
+name = "idx_name"
+
+[[steps.entities]]
+kind = "index"
+scope = "project"
+name = "idx_slug"
+
+[[steps.entities]]
+kind = "index"
+scope = "task"
+name = "idx_title"
