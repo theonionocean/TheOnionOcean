@@ -39,6 +39,7 @@ in
 
     shellHook = ''
       export NX_SKIP_FORMAT=true
+      export NX_DAEMON=true
       export RUST_SRC_PATH=${pkgs.rustPlatform.rustLibSrc}
       export LIBCLANG_PATH="${pkgs.lib.makeLibraryPath [pkgs.llvmPackages.libclang.lib]}"
     '';

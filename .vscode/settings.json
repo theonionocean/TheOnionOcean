@@ -5,8 +5,11 @@
 		"prutaj_board",
 		"infra"
 	],
+	"terminal.integrated.env.linux": {
+		"PATH": "${env:HOME}/.local/bin:${env:PATH}"
+	},
 	"terminal.integrated.automationProfile.linux": {
-		"path": "/run/current-system/sw/bin/bash",
-		"args": ["-c", "/run/current-system/sw/bin/nix-shell --run \"$2\"", "--"]
+		"path": "direnv",
+		"args": ["exec", "${workspaceFolder}", "/run/current-system/sw/bin/bash"]
 	}
 }
