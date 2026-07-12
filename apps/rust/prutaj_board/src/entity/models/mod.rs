@@ -1,4 +1,5 @@
 mod organization;
+mod organization_invitation;
 mod organization_permission;
 mod organization_role;
 mod project;
@@ -7,6 +8,7 @@ mod team;
 mod user;
 
 pub use organization::*;
+pub use organization_invitation::*;
 pub use organization_permission::*;
 pub use organization_role::*;
 pub use project::*;

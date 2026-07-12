@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 use surrealdb::types::{RecordId, SurrealValue};
+use ulid::Ulid;
 
 use crate::{Organization, OrganizationPermission, User};
 
@@ -13,4 +14,27 @@ pub struct OrganizationRole {
     pub organization: Organization,
     pub permissions: Vec<OrganizationPermission>,
     pub sort_order: i32,
+}
+
+impl OrganizationRole {
+    pub fn new(
+        name: String,
+        organization: Organization,
+        created_by: User,
+        description: Option<String>,
+        kind: String,
+        permissions: Vec<OrganizationPermission>,
+        sort_order: i32,
+    ) -> Self {
+        Self {
+            id: RecordId::new("organization_role", Ulid::new().to_string()),
+            name,
+            organization,
+            created_by,
+            description,
+            kind,
+            permissions,
+            sort_order,
+        }
+    }
 }
