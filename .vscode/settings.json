@@ -2,6 +2,7 @@
 	"conventionalCommits.scopes": [
 		"global",
 		"lib/rust/mediatr",
+		"lib/rust/surrealdb_extensions",
 		"prutaj_board",
 		"infra"
 	],

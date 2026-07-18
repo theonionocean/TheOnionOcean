@@ -1,23 +1,27 @@
 
 [workspace]
 resolver = '2'
-members = ['lib/rust/mediatr', 'apps/rust/prutaj_board']
+members = [
+	'lib/rust/mediatr',
+	'apps/rust/prutaj_board',
+	'lib/rust/surrealdb_extensions',
+]
+
+[workspace.dependencies.actix-web]
+version = '4.14.0'
+
+[workspace.dependencies.chrono]
+version = '0.4.45'
+
+[workspace.dependencies.surrealdb]
+version = '3.2.0'
+features = ['kv-rocksdb']
+
+[workspace.dependencies.serde]
+version = '1.0.228'
+
+[workspace.dependencies.ulid]
+version = '1.2.1'
 
 [profile.release]
 lto = true
-
-[workspace.dependencies.actix-web]
-version = "4.14.0"
-
-[workspace.dependencies.chrono]
-version = "0.4.45"
-
-[workspace.dependencies.surrealdb]
-version = "3.2.0"
-features = ["kv-rocksdb"]
-
-[workspace.dependencies.serde]
-version = "1.0.228"
-
-[workspace.dependencies.ulid]
-version = "1.2.1"
