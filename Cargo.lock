@@ -4518,6 +4518,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "surrealdb_extensions"
+version = "0.1.0"
+dependencies = [
+ "surrealdb",
+ "ulid",
+]
+
+[[package]]
 name = "syn"
 version = "1.0.109"
 source = "registry+https://github.com/rust-lang/crates.io-index"
