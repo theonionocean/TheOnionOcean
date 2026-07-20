@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 mediatr = { path = "../../../lib/rust/mediatr" }
+surrealdb_extensions = { path = "../../../lib/rust/surrealdb_extensions" }
 
 [dependencies.actix-web]
 workspace = true
