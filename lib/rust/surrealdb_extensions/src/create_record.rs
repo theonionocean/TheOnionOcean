@@ -25,7 +25,7 @@ where
         record_type: &str,
     ) -> Result<Self, SurrealDbError> {
         let result = db
-            .create((record_type, ulid::Ulid::new().to_string()))
+            .create((record_type, ulid::Ulid::generate().to_string()))
             .content(self)
             .await?
             .ok_or(SurrealDbError::InternalError(record_type.to_string()))?;
