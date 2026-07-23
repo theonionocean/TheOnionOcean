@@ -1,30 +1,39 @@
 use std::{
     any::{Any, TypeId},
     collections::HashMap,
+    future::Future,
     marker::PhantomData,
+    pin::Pin,
 };
 
 use crate::{mediatr_error::MediatrError, Command, CommandHandler, Query, QueryHandler};
 
+type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
+
 macro_rules! define_handler_wrapper {
     ($wrapper:ident, $handler_trait:ident, $message_trait:ident) => {
         struct $wrapper<H, M> {
-            _handler: PhantomData<H>,
+            handler: H,
             _message: PhantomData<M>,
         }
 
         impl<H, M> DynamicHandler for $wrapper<H, M>
         where
             H: $handler_trait<M> + 'static,
-            M: $message_trait + 'static,
-            M::Response: 'static,
+            M: $message_trait + Send + Sync + 'static,
+            M::Response: Send + 'static,
         {
-            fn handle(&self, request: Box<dyn Any>) -> Result<Box<dyn Any>, MediatrError> {
-                let request = *request.downcast::<M>().map_err(|_| {
-                    MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string())
-                })?;
-                let response = H::handle(request)?;
-                Ok(Box::new(response))
+            fn handle(
+                &self,
+                request: Box<dyn Any + Send>,
+            ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>> {
+                Box::pin(async move {
+                    let request = *request.downcast::<M>().map_err(|_| {
+                        MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string())
+                    })?;
+                    let response = self.handler.handle(request).await?;
+                    Ok(Box::new(response) as Box<dyn Any + Send>)
+                })
             }
         }
     };
@@ -33,8 +42,11 @@ macro_rules! define_handler_wrapper {
 define_handler_wrapper!(QueryHandlerWrapper, QueryHandler, Query);
 define_handler_wrapper!(CommandHandlerWrapper, CommandHandler, Command);
 
-trait DynamicHandler {
-    fn handle(&self, request: Box<dyn Any>) -> Result<Box<dyn Any>, MediatrError>;
+trait DynamicHandler: Send + Sync {
+    fn handle(
+        &self,
+        request: Box<dyn Any + Send>,
+    ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>>;
 }
 
 #[derive(Default)]
@@ -43,56 +55,56 @@ pub struct Mediatr {
 }
 
 impl Mediatr {
-    pub fn register_query<H, Q>(&mut self, _handler: H)
+    pub fn register_query<H, Q>(&mut self, handler: H)
     where
         H: QueryHandler<Q> + 'static,
-        Q: Query + 'static,
-        Q::Response: 'static,
+        Q: Query + Send + Sync + 'static,
+        Q::Response: Send + 'static,
     {
         self.handlers.insert(
             TypeId::of::<Q>(),
             Box::new(QueryHandlerWrapper {
-                _handler: PhantomData::<H>,
+                handler,
                 _message: PhantomData,
             }),
         );
     }
 
-    pub fn register_command<H, C>(&mut self, _handler: H)
+    pub fn register_command<H, C>(&mut self, handler: H)
     where
         H: CommandHandler<C> + 'static,
-        C: Command + 'static,
-        C::Response: 'static,
+        C: Command + Send + Sync + 'static,
+        C::Response: Send + 'static,
     {
         self.handlers.insert(
             TypeId::of::<C>(),
             Box::new(CommandHandlerWrapper {
-                _handler: PhantomData::<H>,
+                handler,
                 _message: PhantomData,
             }),
         );
     }
 
-    pub fn send_query<Q>(&self, query: Q) -> Result<Q::Response, MediatrError>
+    pub async fn send_query<Q>(&self, query: Q) -> Result<Q::Response, MediatrError>
     where
-        Q: Query + 'static,
-        Q::Response: 'static,
+        Q: Query + Send + Sync + 'static,
+        Q::Response: Send + 'static,
     {
-        self.dispatch::<Q, Q::Response>(query)
+        self.dispatch::<Q, Q::Response>(query).await
     }
 
-    pub fn send_command<C>(&self, command: C) -> Result<C::Response, MediatrError>
+    pub async fn send_command<C>(&self, command: C) -> Result<C::Response, MediatrError>
     where
-        C: Command + 'static,
-        C::Response: 'static,
+        C: Command + Send + Sync + 'static,
+        C::Response: Send + 'static,
     {
-        self.dispatch::<C, C::Response>(command)
+        self.dispatch::<C, C::Response>(command).await
     }
 
-    fn dispatch<M, R>(&self, message: M) -> Result<R, MediatrError>
+    async fn dispatch<M, R>(&self, message: M) -> Result<R, MediatrError>
     where
-        M: 'static,
-        R: 'static,
+        M: Send + 'static,
+        R: Send + 'static,
     {
         let message_type = TypeId::of::<M>();
 
@@ -104,7 +116,8 @@ impl Mediatr {
             ))?;
 
         let response = handler
-            .handle(Box::new(message))?
+            .handle(Box::new(message))
+            .await?
             .downcast::<R>()
             .map_err(|_| MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string()))?;
 
