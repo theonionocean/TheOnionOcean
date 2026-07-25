@@ -4,6 +4,7 @@ use std::{
     future::Future,
     marker::PhantomData,
     pin::Pin,
+    sync::Arc,
 };
 
 use crate::{mediatr_error::MediatrError, Command, CommandHandler, Query, QueryHandler};
@@ -49,9 +50,9 @@ trait DynamicHandler: Send + Sync {
     ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>>;
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Mediatr {
-    handlers: HashMap<TypeId, Box<dyn DynamicHandler>>,
+    handlers: HashMap<TypeId, Arc<dyn DynamicHandler>>,
 }
 
 impl Mediatr {
@@ -63,7 +64,7 @@ impl Mediatr {
     {
         self.handlers.insert(
             TypeId::of::<Q>(),
-            Box::new(QueryHandlerWrapper {
+            Arc::new(QueryHandlerWrapper {
                 handler,
                 _message: PhantomData,
             }),
@@ -78,7 +79,7 @@ impl Mediatr {
     {
         self.handlers.insert(
             TypeId::of::<C>(),
-            Box::new(CommandHandlerWrapper {
+            Arc::new(CommandHandlerWrapper {
                 handler,
                 _message: PhantomData,
             }),
