@@ -1,13 +1,12 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use surrealdb::types::{RecordId, SurrealValue};
-use ulid::Ulid;
 
 use crate::{Project, User};
 
 #[derive(SurrealValue, Serialize, Deserialize)]
 pub struct Task {
-    pub id: RecordId,
+    pub id: Option<RecordId>,
     pub title: String,
     pub description: String,
     pub status: Option<String>,
@@ -30,7 +29,7 @@ impl Task {
         modified_by: User,
     ) -> Self {
         Self {
-            id: RecordId::new("task", Ulid::new().to_string()),
+            id: None,
             title,
             description,
             status,

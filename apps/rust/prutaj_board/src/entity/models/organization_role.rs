@@ -1,12 +1,11 @@
 use serde::{Deserialize, Serialize};
 use surrealdb::types::{RecordId, SurrealValue};
-use ulid::Ulid;
 
 use crate::{Organization, OrganizationPermission, User};
 
 #[derive(SurrealValue, Serialize, Deserialize)]
 pub struct OrganizationRole {
-    pub id: RecordId,
+    pub id: Option<RecordId>,
     pub created_by: User,
     pub description: Option<String>,
     pub kind: String,
@@ -27,7 +26,7 @@ impl OrganizationRole {
         sort_order: i32,
     ) -> Self {
         Self {
-            id: RecordId::new("organization_role", Ulid::new().to_string()),
+            id: None,
             name,
             organization,
             created_by,

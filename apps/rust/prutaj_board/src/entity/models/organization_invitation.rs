@@ -7,7 +7,7 @@ use crate::{OrganizationRole, Team, User};
 
 #[derive(SurrealValue, Serialize, Deserialize)]
 pub struct OrganizationInvitation {
-    pub id: RecordId,
+    pub id: Option<RecordId>,
     pub organization_role: OrganizationRole,
     pub email: String,
     pub token: String,
@@ -27,10 +27,10 @@ impl OrganizationInvitation {
         created_by: User,
     ) -> Self {
         Self {
-            id: RecordId::new("organization_invitation", Ulid::new().to_string()),
+            id: None,
             organization_role,
             email,
-            token: Ulid::new().to_string(),
+            token: Ulid::generate().to_string(),
             expires,
             teams,
             used_at: None,

@@ -1,13 +1,12 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use surrealdb::types::{RecordId, SurrealValue};
-use ulid::Ulid;
 
 use crate::{Team, User};
 
 #[derive(SurrealValue, Serialize, Deserialize)]
 pub struct Organization {
-    pub id: RecordId,
+    pub id: Option<RecordId>,
     pub name: String,
     pub created_at: DateTime<Utc>,
     pub legal_name: Option<String>,
@@ -26,7 +25,7 @@ impl Organization {
         slug: String,
     ) -> Self {
         Self {
-            id: RecordId::new("organization", Ulid::new().to_string()),
+            id: None,
             name,
             legal_name,
             logo,
