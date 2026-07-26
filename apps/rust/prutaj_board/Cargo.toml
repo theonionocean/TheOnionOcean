@@ -23,4 +23,7 @@ workspace = true
 [dependencies.ulid]
 workspace = true
 
+[dependencies.dotenvy]
+workspace = true
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

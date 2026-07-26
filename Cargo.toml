@@ -23,6 +23,9 @@ version = '1.0.229'
 [workspace.dependencies.ulid]
 version = '3.0.0'
 
+[workspace.dependencies.dotenvy]
+version = '0.15.7'
+
 [patch.crates-io]
 # diskann-wide 0.54.0 uses AVX-512 VNNI intrinsics (_mm512_dpwssd_epi32 etc.) via
 # #[target_feature] which triggers an LLVM 21 bug ("Cannot select: intrinsic
