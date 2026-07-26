@@ -1,3 +1,3 @@
-mod create_user_command;
+mod create_user_endpoint;
 
-pub use create_user_command::*;
+pub use create_user_endpoint::*;
