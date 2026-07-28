@@ -5,7 +5,7 @@ use surrealdb::{
     types::{RecordId, SurrealValue},
     Surreal,
 };
-use surrealdb_extensions::{CreateRecord, SurrealDbError, UpdateRecord};
+use surrealdb_extensions::{CreateRecord, DeleteRecord, ReadRecord, SurrealDbError, UpdateRecord};
 
 const TABLE_NAME: &str = "user";
 
@@ -32,8 +32,18 @@ impl User {
         Ok(result)
     }
 
+    pub async fn find(db: &Surreal<Client>, id: &str) -> Result<User, SurrealDbError> {
+        let result = User::read_record(db, TABLE_NAME, id).await?;
+        Ok(result)
+    }
+
     pub async fn update(self, db: &Surreal<Client>, id: &str) -> Result<User, SurrealDbError> {
         let result = self.clone().update_record(db, TABLE_NAME, id, self).await?;
+        Ok(result)
+    }
+
+    pub async fn delete(self, db: &Surreal<Client>, id: &str) -> Result<(), SurrealDbError> {
+        let result = self.delete_record(db, TABLE_NAME, id).await?;
         Ok(result)
     }
 }

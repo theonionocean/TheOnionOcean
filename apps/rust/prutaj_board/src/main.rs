@@ -1,6 +1,9 @@
 use actix_web::{web, App, HttpServer};
 use mediatr::Mediatr;
-use prutaj_board::{create_user, CreateUserCommandHandler};
+use prutaj_board::{
+    create_user, delete_user, get_user, update_user, CreateUserCommandHandler,
+    DeleteUserCommandHandler, GetUserQueryHandler, UpdateUserCommandHandler,
+};
 
 use surrealdb_extensions::DatabaseContext;
 
@@ -37,6 +40,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     mediatr.register_command(CreateUserCommandHandler {
         db: context.db().clone(),
     });
+    mediatr.register_query(GetUserQueryHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(UpdateUserCommandHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(DeleteUserCommandHandler {
+        db: context.db().clone(),
+    });
 
     HttpServer::new(move || {
         App::new()
@@ -48,7 +60,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     // task
                     // team
                     // user
-                    .service(create_user),
+                    .service(create_user)
+                    .service(get_user)
+                    .service(update_user)
+                    .service(delete_user),
             )
     })
     .bind((app_host.as_str(), app_port))?
