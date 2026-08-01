@@ -1,0 +1,29 @@
+opencollection: 1.0.0
+
+info:
+  name: Prutaj Board API
+  version: "1"
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
+    openapi:
+      - sourceUrl: ../../specification.yml
+        groupBy: tags
+        lastSyncDate: 2026-08-01T16:04:04.264Z
+        specHash: 3607b90d319f1f9ff6ec4e6e031a2f24
+        autoCheck: true
+        autoCheckInterval: 5
