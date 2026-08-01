@@ -35,6 +35,8 @@ in
       rustPlatform.rustLibSrc
       just
       surrealkit
+      mold
+      sccache
     ];
 
     shellHook = ''
