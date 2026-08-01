@@ -3,6 +3,7 @@ node_modules
 dist
 result
 *.env
+specification.yml
 
 .nx/cache
 .nx/workspace-data
