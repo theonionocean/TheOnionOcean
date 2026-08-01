@@ -26,4 +26,11 @@ workspace = true
 [dependencies.dotenvy]
 workspace = true
 
+[dependencies.utoipa]
+workspace = true
+
+[[bin]]
+name = "generate_openapi"
+path = "src/bin/generate_openapi.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
