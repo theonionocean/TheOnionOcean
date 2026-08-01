@@ -1,8 +1,12 @@
 use actix_web::{web, App, HttpServer};
 use mediatr::Mediatr;
 use prutaj_board::{
-    create_user, delete_user, get_user, update_user, CreateUserCommandHandler,
-    DeleteUserCommandHandler, GetUserQueryHandler, UpdateUserCommandHandler,
+    create_project, create_task, create_user, delete_project, delete_task, delete_user,
+    get_project, get_task, get_user, update_project, update_task, update_user,
+    CreateProjectCommandHandler, CreateTaskCommandHandler, CreateUserCommandHandler,
+    DeleteProjectCommandHandler, DeleteTaskCommandHandler, DeleteUserCommandHandler,
+    GetProjectQueryHandler, GetTaskQueryHandler, GetUserQueryHandler, UpdateProjectCommandHandler,
+    UpdateTaskCommandHandler, UpdateUserCommandHandler,
 };
 
 use surrealdb_extensions::DatabaseContext;
@@ -34,7 +38,31 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // organization
     // project
+    mediatr.register_command(CreateProjectCommandHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_query(GetProjectQueryHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(UpdateProjectCommandHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(DeleteProjectCommandHandler {
+        db: context.db().clone(),
+    });
     // task
+    mediatr.register_command(CreateTaskCommandHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_query(GetTaskQueryHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(UpdateTaskCommandHandler {
+        db: context.db().clone(),
+    });
+    mediatr.register_command(DeleteTaskCommandHandler {
+        db: context.db().clone(),
+    });
     // team
     // user
     mediatr.register_command(CreateUserCommandHandler {
@@ -57,7 +85,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 web::scope("/api")
                     // organization
                     // project
+                    .service(create_project)
+                    .service(get_project)
+                    .service(update_project)
+                    .service(delete_project)
                     // task
+                    .service(create_task)
+                    .service(get_task)
+                    .service(update_task)
+                    .service(delete_task)
                     // team
                     // user
                     .service(create_user)

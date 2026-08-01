@@ -1,10 +1,19 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
-use surrealdb::types::{RecordId, SurrealValue};
+use surrealdb::{
+    engine::remote::ws::Client,
+    types::{RecordId, SurrealValue},
+    Surreal,
+};
 
 use crate::{Project, User};
+use surrealdb_extensions::{
+    CreateRecord, DeleteRecord, ReadAllRecords, ReadRecord, SurrealDbError, UpdateRecord,
+};
 
-#[derive(SurrealValue, Serialize, Deserialize)]
+const TABLE_NAME: &str = "task";
+
+#[derive(SurrealValue, Serialize, Deserialize, Clone)]
 pub struct Task {
     pub id: Option<RecordId>,
     pub title: String,
@@ -40,5 +49,31 @@ impl Task {
             created_at: Utc::now(),
             updated_at: Utc::now(),
         }
+    }
+
+    pub async fn create(self, db: &Surreal<Client>) -> Result<Task, SurrealDbError> {
+        let result = self.create_record(db, TABLE_NAME).await?;
+        Ok(result)
+    }
+
+    pub async fn find(db: &Surreal<Client>, id: &str) -> Result<Task, SurrealDbError> {
+        let result = Task::read_record(db, TABLE_NAME, id).await?;
+        Ok(result)
+    }
+
+    // TODO: Find all tasks by project id
+    pub async fn find_all(db: &Surreal<Client>) -> Result<Vec<Task>, SurrealDbError> {
+        let result = Task::read_all_records(db, TABLE_NAME).await?;
+        Ok(result)
+    }
+
+    pub async fn update(self, db: &Surreal<Client>, id: &str) -> Result<Task, SurrealDbError> {
+        let result = self.clone().update_record(db, TABLE_NAME, id, self).await?;
+        Ok(result)
+    }
+
+    pub async fn delete(self, db: &Surreal<Client>, id: &str) -> Result<(), SurrealDbError> {
+        let result = self.delete_record(db, TABLE_NAME, id).await?;
+        Ok(result)
     }
 }
