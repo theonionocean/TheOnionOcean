@@ -5,8 +5,19 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::CreateTaskCommand;
+use crate::{CreateTaskCommand, Task};
 
+#[utoipa::path(
+    post,
+    path = "/task/create",
+    context_path = "/api",
+    tag = "task",
+    request_body = CreateTaskCommand,
+    responses(
+        (status = 200, description = "Task created successfully", body = Task),
+        (status = 500, description = "Internal server error", body = String)
+    )
+)]
 #[post("/task/create")]
 pub async fn create_task(mediatr: Data<Mediatr>, req: Json<CreateTaskCommand>) -> impl Responder {
     let command = req.into_inner();

@@ -5,8 +5,19 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::UpdateTaskCommand;
+use crate::{Task, UpdateTaskCommand};
 
+#[utoipa::path(
+    put,
+    path = "/task/update",
+    context_path = "/api",
+    tag = "task",
+    request_body = UpdateTaskCommand,
+    responses(
+        (status = 200, description = "Task updated successfully", body = Task),
+        (status = 500, description = "Internal server error", body = String)
+    )
+)]
 #[put("/task/update")]
 pub async fn update_task(mediatr: Data<Mediatr>, req: Json<UpdateTaskCommand>) -> impl Responder {
     let command = req.into_inner();

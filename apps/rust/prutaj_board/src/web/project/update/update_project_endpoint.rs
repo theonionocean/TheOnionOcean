@@ -5,8 +5,19 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::UpdateProjectCommand;
+use crate::{Project, UpdateProjectCommand};
 
+#[utoipa::path(
+    put,
+    path = "/project/update",
+    context_path = "/api",
+    tag = "project",
+    request_body = UpdateProjectCommand,
+    responses(
+        (status = 200, description = "Project updated successfully", body = Project),
+        (status = 500, description = "Internal server error", body = String)
+    )
+)]
 #[put("/project/update")]
 pub async fn update_project(
     mediatr: Data<Mediatr>,

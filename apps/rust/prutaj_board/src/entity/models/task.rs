@@ -5,6 +5,7 @@ use surrealdb::{
     types::{RecordId, SurrealValue},
     Surreal,
 };
+use utoipa::ToSchema;
 
 use crate::{Project, User};
 use surrealdb_extensions::{
@@ -13,8 +14,9 @@ use surrealdb_extensions::{
 
 const TABLE_NAME: &str = "task";
 
-#[derive(SurrealValue, Serialize, Deserialize, Clone)]
+#[derive(SurrealValue, Serialize, Deserialize, Clone, ToSchema)]
 pub struct Task {
+    #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
     pub title: String,
     pub description: String,

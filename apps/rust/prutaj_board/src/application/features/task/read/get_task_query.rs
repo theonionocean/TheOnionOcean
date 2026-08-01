@@ -1,10 +1,11 @@
 use mediatr::{MediatrError, Query, QueryHandler};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
+use utoipa::ToSchema;
 
 use crate::entity::Task;
 
-#[derive(Deserialize)]
+#[derive(Deserialize, ToSchema)]
 pub struct GetTaskQuery {
     pub id: String,
 }

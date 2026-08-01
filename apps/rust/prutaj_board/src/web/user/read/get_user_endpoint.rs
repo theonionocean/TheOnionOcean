@@ -5,10 +5,23 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::GetUserQuery;
+use crate::{GetUserQuery, User};
 
+#[utoipa::path(
+    get,
+    path = "/user/get/{id}",
+    context_path = "/api",
+    tag = "user",
+    params(
+        ("id" = String, Path, description = "User id")
+    ),
+    responses(
+        (status = 200, description = "User retrieved successfully", body = User),
+        (status = 500, description = "Internal server error", body = String)
+    )
+)]
 #[get("/user/get/{id}")]
-async fn get_user(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
+pub async fn get_user(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetUserQuery {
         id: path.into_inner(),
     };

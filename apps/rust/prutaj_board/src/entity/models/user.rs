@@ -6,11 +6,13 @@ use surrealdb::{
     Surreal,
 };
 use surrealdb_extensions::{CreateRecord, DeleteRecord, ReadRecord, SurrealDbError, UpdateRecord};
+use utoipa::ToSchema;
 
 const TABLE_NAME: &str = "user";
 
-#[derive(SurrealValue, Serialize, Deserialize, Debug, Clone)]
+#[derive(SurrealValue, Serialize, Deserialize, Debug, Clone, ToSchema)]
 pub struct User {
+    #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
     pub name: String,
     pub email: String,

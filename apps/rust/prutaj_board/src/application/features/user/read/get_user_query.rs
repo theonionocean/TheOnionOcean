@@ -1,10 +1,11 @@
 use mediatr::{MediatrError, Query, QueryHandler};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
+use utoipa::ToSchema;
 
 use crate::entity::User;
 
-#[derive(Deserialize)]
+#[derive(Deserialize, ToSchema)]
 pub struct GetUserQuery {
     pub id: String,
 }

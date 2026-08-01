@@ -1,3 +1,3 @@
 mod get_task_endpoint;
 
-pub use get_task_endpoint::get_task;
+pub use get_task_endpoint::*;

@@ -1,3 +1,3 @@
 mod update_task_endpoint;
 
-pub use update_task_endpoint::update_task;
+pub use update_task_endpoint::*;

@@ -8,13 +8,15 @@ use surrealdb::{
 use surrealdb_extensions::{
     CreateRecord, DeleteRecord, ReadAllRecords, ReadRecord, SurrealDbError, UpdateRecord,
 };
+use utoipa::ToSchema;
 
 use crate::User;
 
 const TABLE_NAME: &str = "project";
 
-#[derive(SurrealValue, Serialize, Deserialize, Clone)]
+#[derive(SurrealValue, Serialize, Deserialize, Clone, ToSchema)]
 pub struct Project {
+    #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
     pub name: String,
     pub description: String,

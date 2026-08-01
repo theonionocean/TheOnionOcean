@@ -50,6 +50,14 @@
           "release": true
         }
       }
+    },
+    "generate-openapi": {
+      "executor": "@monodon/rust:run",
+      "outputs": ["{options.target-dir}", "{projectRoot}/specification.yml"],
+      "options": {
+        "target-dir": "dist/target/prutaj_board",
+        "bin": "generate_openapi"
+      }
     }
   }
 }

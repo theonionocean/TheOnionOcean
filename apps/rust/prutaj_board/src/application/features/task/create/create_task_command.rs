@@ -1,10 +1,11 @@
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
+use utoipa::ToSchema;
 
 use crate::{entity::Task, Project, User};
 
-#[derive(Deserialize)]
+#[derive(Deserialize, ToSchema)]
 pub struct CreateTaskCommand {
     pub title: String,
     pub description: String,

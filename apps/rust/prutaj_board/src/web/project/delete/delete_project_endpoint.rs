@@ -7,6 +7,17 @@ use mediatr::Mediatr;
 
 use crate::DeleteProjectCommand;
 
+#[utoipa::path(
+    delete,
+    path = "/project/delete",
+    context_path = "/api",
+    tag = "project",
+    request_body = DeleteProjectCommand,
+    responses(
+        (status = 200, description = "Project deleted successfully"),
+        (status = 500, description = "Internal server error", body = String)
+    )
+)]
 #[delete("/project/delete")]
 pub async fn delete_project(
     mediatr: Data<Mediatr>,
