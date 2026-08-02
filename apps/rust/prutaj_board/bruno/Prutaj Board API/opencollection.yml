@@ -23,7 +23,7 @@ extensions:
     openapi:
       - sourceUrl: ../../specification.yml
         groupBy: tags
-        lastSyncDate: 2026-08-01T16:04:04.264Z
-        specHash: 3607b90d319f1f9ff6ec4e6e031a2f24
+        lastSyncDate: 2026-08-02T11:20:17.368Z
+        specHash: 53e0a0464da33e36a062e16197049ff4
         autoCheck: true
         autoCheckInterval: 5

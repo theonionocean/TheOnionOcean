@@ -1,0 +1,107 @@
+info:
+  name: get_organization
+  type: http
+  seq: 3
+  tags:
+    - organization
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/organization/get/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+      description: Organization id
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Organization retrieved successfully
+    request:
+      url: "{{baseUrl}}/api/organization/get/:id"
+      method: GET
+      params:
+        - name: id
+          value: ""
+          type: path
+          description: Organization id
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "created_at": "",
+            "id": "",
+            "legal_name": "",
+            "logo": "",
+            "name": "",
+            "owner": {
+              "created_at": "",
+              "email": "",
+              "id": "",
+              "name": ""
+            },
+            "slug": "",
+            "teams": [
+              {
+                "created_at": "",
+                "id": "",
+                "name": "",
+                "organization": "",
+                "parent": "",
+                "projects": [
+                  {
+                    "created_at": "",
+                    "created_by": {
+                      "created_at": "",
+                      "email": "",
+                      "id": "",
+                      "name": ""
+                    },
+                    "description": "",
+                    "id": "",
+                    "modified_by": {
+                      "created_at": "",
+                      "email": "",
+                      "id": "",
+                      "name": ""
+                    },
+                    "name": "",
+                    "slug": "",
+                    "updated_at": ""
+                  }
+                ]
+              }
+            ]
+          }
+  - name: 500 Response
+    description: Internal server error
+    request:
+      url: "{{baseUrl}}/api/organization/get/:id"
+      method: GET
+      params:
+        - name: id
+          value: ""
+          type: path
+          description: Organization id
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Content-Type
+          value: text/plain
+      body:
+        type: text
+        data: ""
