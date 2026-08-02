@@ -12,10 +12,18 @@ http:
     type: json
     data: |-
       {
-        "email": "",
-        "name": ""
+        "email": "{{$randomEmail}}",
+        "name": "{{$randomFullName}}"
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.body && res.body.id) {
+          bru.setEnvVar('userId', res.body.id.key.String);
+        }
 
 settings:
   encodeUrl: true

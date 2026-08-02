@@ -12,11 +12,19 @@ http:
     type: json
     data: |-
       {
-        "description": "",
-        "status": "",
-        "title": ""
+        "description": "{{$randomLoremParagraph}}",
+        "status": "todo",
+        "title": "{{$randomPhrase}}"
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.body && res.body.id) {
+          bru.setEnvVar('taskId', res.body.id.key.String);
+        }
 
 settings:
   encodeUrl: true

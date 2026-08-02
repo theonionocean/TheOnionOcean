@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/api/organization/get/:id"
   params:
     - name: id
-      value: ""
+      value: "{{organizationId}}"
       type: path
       description: Organization id
   auth: inherit

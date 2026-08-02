@@ -12,10 +12,10 @@ http:
     type: json
     data: |-
       {
-        "description": "",
-        "id": "",
-        "status": "",
-        "title": ""
+        "description": "{{$randomLoremParagraph}}",
+        "id": "{{taskId}}",
+        "status": "in_progress",
+        "title": "{{$randomPhrase}}"
       }
   auth: inherit
 

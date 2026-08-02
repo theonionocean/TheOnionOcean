@@ -12,9 +12,9 @@ http:
     type: json
     data: |-
       {
-        "email": "",
-        "id": "",
-        "name": ""
+        "email": "{{$randomEmail}}",
+        "id": "{{userId}}",
+        "name": "{{$randomFullName}}"
       }
   auth: inherit
 

@@ -12,17 +12,17 @@ http:
     type: json
     data: |-
       {
-        "id": "",
-        "legal_name": "",
-        "logo": "",
-        "name": "",
+        "id": "{{organizationId}}",
+        "legal_name": "{{$randomCompanyName}} {{$randomCompanySuffix}}",
+        "logo": "{{$randomImageUrl}}",
+        "name": "{{$randomCompanyName}}",
         "owner": {
-          "created_at": "",
-          "email": "",
-          "id": "",
-          "name": ""
+          "created_at": "{{$randomDatePast}}",
+          "email": "{{$randomEmail}}",
+          "id": "{{userId}}",
+          "name": "{{$randomFullName}}"
         },
-        "slug": ""
+        "slug": "{{$randomLoremSlug}}"
       }
   auth: inherit
 

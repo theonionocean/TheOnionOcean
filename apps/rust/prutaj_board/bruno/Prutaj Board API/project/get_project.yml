@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/api/project/get/:id"
   params:
     - name: id
-      value: ""
+      value: "{{projectId}}"
       type: path
       description: Project id
   auth: inherit

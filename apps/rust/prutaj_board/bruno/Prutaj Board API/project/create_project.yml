@@ -12,11 +12,19 @@ http:
     type: json
     data: |-
       {
-        "description": "",
-        "name": "",
-        "slug": ""
+        "description": "{{$randomLoremSentence}}",
+        "name": "{{$randomProductName}}",
+        "slug": "{{$randomLoremSlug}}"
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.body && res.body.id) {
+          bru.setEnvVar('projectId', res.body.id.key.String);
+        }
 
 settings:
   encodeUrl: true

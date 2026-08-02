@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/api/task/get/:id"
   params:
     - name: id
-      value: ""
+      value: "{{taskId}}"
       type: path
       description: Task id
   auth: inherit

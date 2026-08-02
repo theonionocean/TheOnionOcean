@@ -12,7 +12,7 @@ http:
     type: json
     data: |-
       {
-        "id": ""
+        "id": "{{teamId}}"
       }
   auth: inherit
 

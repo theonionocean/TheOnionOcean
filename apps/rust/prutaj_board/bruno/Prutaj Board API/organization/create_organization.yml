@@ -12,18 +12,26 @@ http:
     type: json
     data: |-
       {
-        "legal_name": "",
-        "logo": "",
-        "name": "",
+        "legal_name": "{{$randomCompanyName}} {{$randomCompanySuffix}}",
+        "logo": "{{$randomImageUrl}}",
+        "name": "{{$randomCompanyName}}",
         "owner": {
-          "created_at": "",
-          "email": "",
-          "id": "",
-          "name": ""
+          "created_at": "{{$randomDatePast}}",
+          "email": "{{$randomEmail}}",
+          "id": "{{userId}}",
+          "name": "{{$randomFullName}}"
         },
-        "slug": ""
+        "slug": "{{$randomLoremSlug}}"
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.body && res.body.id) {
+          bru.setEnvVar('organizationId', res.body.id.key.String);
+        }
 
 settings:
   encodeUrl: true

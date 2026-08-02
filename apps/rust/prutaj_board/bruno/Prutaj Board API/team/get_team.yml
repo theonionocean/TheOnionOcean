@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/api/team/get/:id"
   params:
     - name: id
-      value: ""
+      value: "{{teamId}}"
       type: path
       description: Team id
   auth: inherit

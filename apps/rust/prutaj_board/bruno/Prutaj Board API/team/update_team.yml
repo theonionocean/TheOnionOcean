@@ -12,52 +12,22 @@ http:
     type: json
     data: |-
       {
-        "id": "",
-        "name": "",
+        "id": "{{teamId}}",
+        "name": "{{$randomWords}} Team",
         "organization": {
-          "created_at": "",
-          "id": "",
-          "legal_name": "",
-          "logo": "",
-          "name": "",
+          "created_at": "{{$randomDatePast}}",
+          "id": "{{organizationId}}",
+          "legal_name": "{{$randomCompanyName}} {{$randomCompanySuffix}}",
+          "logo": "{{$randomImageUrl}}",
+          "name": "{{$randomCompanyName}}",
           "owner": {
-            "created_at": "",
-            "email": "",
-            "id": "",
-            "name": ""
+            "created_at": "{{$randomDatePast}}",
+            "email": "{{$randomEmail}}",
+            "id": "{{userId}}",
+            "name": "{{$randomFullName}}"
           },
-          "slug": "",
-          "teams": [
-            {
-              "created_at": "",
-              "id": "",
-              "name": "",
-              "organization": "",
-              "parent": "",
-              "projects": [
-                {
-                  "created_at": "",
-                  "created_by": {
-                    "created_at": "",
-                    "email": "",
-                    "id": "",
-                    "name": ""
-                  },
-                  "description": "",
-                  "id": "",
-                  "modified_by": {
-                    "created_at": "",
-                    "email": "",
-                    "id": "",
-                    "name": ""
-                  },
-                  "name": "",
-                  "slug": "",
-                  "updated_at": ""
-                }
-              ]
-            }
-          ]
+          "slug": "{{$randomLoremSlug}}",
+          "teams": []
         }
       }
   auth: inherit
