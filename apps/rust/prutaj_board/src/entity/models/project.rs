@@ -14,7 +14,7 @@ use crate::User;
 
 const TABLE_NAME: &str = "project";
 
-#[derive(SurrealValue, Serialize, Deserialize, Clone, ToSchema)]
+#[derive(SurrealValue, Serialize, Deserialize, Debug, Clone, ToSchema)]
 pub struct Project {
     #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
