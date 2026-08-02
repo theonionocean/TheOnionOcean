@@ -47,8 +47,16 @@ impl Team {
         Ok(result)
     }
 
-    pub async fn update(self, db: &Surreal<Client>, id: &str) -> Result<Team, SurrealDbError> {
-        let result = self.clone().update_record(db, TABLE_NAME, id, self).await?;
+    pub async fn update(
+        self,
+        db: &Surreal<Client>,
+        id: &str,
+        content: Team,
+    ) -> Result<Team, SurrealDbError> {
+        let result = content
+            .clone()
+            .update_record(db, TABLE_NAME, id, content)
+            .await?;
         Ok(result)
     }
 

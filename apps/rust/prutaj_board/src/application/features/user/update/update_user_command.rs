@@ -26,8 +26,15 @@ impl CommandHandler<UpdateUserCommand> for UpdateUserCommandHandler {
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 
+        let content = User {
+            id: user.id.clone(),
+            name: command.name,
+            email: command.email,
+            created_at: user.created_at,
+        };
+
         let updated = user
-            .update(&self.db, command.id.as_str())
+            .update(&self.db, command.id.as_str(), content)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 

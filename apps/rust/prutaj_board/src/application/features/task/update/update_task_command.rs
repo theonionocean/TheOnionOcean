@@ -27,8 +27,21 @@ impl CommandHandler<UpdateTaskCommand> for UpdateTaskCommandHandler {
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 
+        let content = Task {
+            id: task.id.clone(),
+            title: command.title,
+            description: command.description,
+            status: command.status,
+            assigned_to: task.assigned_to.clone(),
+            project: task.project.clone(),
+            created_by: task.created_by.clone(),
+            modified_by: task.modified_by.clone(),
+            created_at: task.created_at,
+            updated_at: task.updated_at,
+        };
+
         let updated = task
-            .update(&self.db, &command.id)
+            .update(&self.db, &command.id, content)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 

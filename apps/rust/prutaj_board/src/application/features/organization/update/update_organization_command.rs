@@ -32,8 +32,19 @@ impl CommandHandler<UpdateOrganizationCommand> for UpdateOrganizationCommandHand
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 
+        let content = Organization {
+            id: organization.id.clone(),
+            name: command.name,
+            legal_name: command.legal_name,
+            logo: command.logo,
+            owner: command.owner,
+            slug: command.slug,
+            teams: organization.teams.clone(),
+            created_at: organization.created_at,
+        };
+
         let updated = organization
-            .update(&self.db, command.id.as_str())
+            .update(&self.db, command.id.as_str(), content)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 

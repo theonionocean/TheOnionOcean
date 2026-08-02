@@ -26,8 +26,17 @@ impl CommandHandler<UpdateTeamCommand> for UpdateTeamCommandHandler {
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 
+        let content = Team {
+            id: team.id.clone(),
+            name: command.name,
+            organization: command.organization,
+            parent: team.parent.clone(),
+            projects: team.projects.clone(),
+            created_at: team.created_at,
+        };
+
         let updated = team
-            .update(&self.db, command.id.as_str())
+            .update(&self.db, command.id.as_str(), content)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
 
