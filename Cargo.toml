@@ -31,12 +31,7 @@ version = '5.4.0'
 features = ['yaml', 'actix_extras', 'chrono']
 
 [patch.crates-io]
-# diskann-wide 0.54.0 uses AVX-512 VNNI intrinsics (_mm512_dpwssd_epi32 etc.) via
-# #[target_feature] which triggers an LLVM 21 bug ("Cannot select: intrinsic
-# %llvm.x86.avx512.vpdpwssd.512") on non-AVX-512 CPUs (e.g. Zen2). This local
-# patch replaces the VNNI intrinsics with equivalent AVX-512BW/AVX2 fallbacks so
-# the crate compiles on all x86_64 hosts regardless of AVX-512 support.
-diskann-wide = { path = "vendor/diskann-wide" }
+diskann-wide = { path = 'vendor/diskann-wide' }
 
 [profile.release]
 lto = true

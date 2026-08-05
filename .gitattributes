@@ -1,1 +1,2 @@
 *.surql linguist-detectable=false
+vendor/** linguist-vendored
