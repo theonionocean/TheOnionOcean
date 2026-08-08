@@ -1,4 +1,5 @@
 use chrono::{DateTime, Utc};
+use macros::AuditibleEntity;
 use serde::{Deserialize, Serialize};
 use surrealdb::{
     engine::remote::ws::Client,
@@ -14,7 +15,7 @@ use surrealdb_extensions::{
 
 const TABLE_NAME: &str = "task";
 
-#[derive(SurrealValue, Serialize, Deserialize, Clone, ToSchema)]
+#[derive(SurrealValue, Serialize, Deserialize, Clone, ToSchema, AuditibleEntity)]
 pub struct Task {
     #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
@@ -23,10 +24,10 @@ pub struct Task {
     pub status: Option<String>,
     pub assigned_to: Option<User>,
     pub project: Project,
-    pub created_by: User,
-    pub modified_by: User,
+    pub created_by: String,
     pub created_at: DateTime<Utc>,
-    pub updated_at: DateTime<Utc>,
+    pub modified_by: String,
+    pub modified_at: DateTime<Utc>,
 }
 
 impl Task {
@@ -36,8 +37,6 @@ impl Task {
         status: Option<String>,
         assigned_to: Option<User>,
         project: Project,
-        created_by: User,
-        modified_by: User,
     ) -> Self {
         Self {
             id: None,
@@ -46,10 +45,10 @@ impl Task {
             status,
             assigned_to,
             project,
-            created_by,
-            modified_by,
+            created_by: "Anonymous".to_string(),
             created_at: Utc::now(),
-            updated_at: Utc::now(),
+            modified_by: "Anonymous".to_string(),
+            modified_at: Utc::now(),
         }
     }
 

@@ -1,11 +1,12 @@
 use chrono::{DateTime, Utc};
+use macros::AuditibleEntity;
 use serde::{Deserialize, Serialize};
 use surrealdb::types::{RecordId, SurrealValue};
 use ulid::Ulid;
 
 use crate::{OrganizationRole, Team, User};
 
-#[derive(SurrealValue, Serialize, Deserialize)]
+#[derive(SurrealValue, Serialize, Deserialize, AuditibleEntity)]
 pub struct OrganizationInvitation {
     pub id: Option<RecordId>,
     pub organization_role: OrganizationRole,
@@ -15,7 +16,10 @@ pub struct OrganizationInvitation {
     pub teams: Vec<Team>,
     pub used_at: Option<DateTime<Utc>>,
     pub used_by: Option<User>,
-    pub created_by: User,
+    pub created_by: String,
+    pub created_at: DateTime<Utc>,
+    pub modified_by: String,
+    pub modified_at: DateTime<Utc>,
 }
 
 impl OrganizationInvitation {
@@ -24,7 +28,6 @@ impl OrganizationInvitation {
         email: String,
         expires: DateTime<Utc>,
         teams: Vec<Team>,
-        created_by: User,
     ) -> Self {
         Self {
             id: None,
@@ -35,7 +38,10 @@ impl OrganizationInvitation {
             teams,
             used_at: None,
             used_by: None,
-            created_by,
+            created_by: "Anonymous".to_string(),
+            created_at: Utc::now(),
+            modified_by: "Anonymous".to_string(),
+            modified_at: Utc::now(),
         }
     }
 }

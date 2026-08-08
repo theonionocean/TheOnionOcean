@@ -1,4 +1,5 @@
 use chrono::{DateTime, Utc};
+use macros::AuditibleEntity;
 use serde::{Deserialize, Serialize};
 use surrealdb::{
     engine::remote::ws::Client,
@@ -14,36 +15,30 @@ use crate::User;
 
 const TABLE_NAME: &str = "project";
 
-#[derive(SurrealValue, Serialize, Deserialize, Debug, Clone, ToSchema)]
+#[derive(SurrealValue, Serialize, Deserialize, Debug, Clone, ToSchema, AuditibleEntity)]
 pub struct Project {
     #[schema(value_type = Option<String>)]
     pub id: Option<RecordId>,
     pub name: String,
     pub description: String,
     pub slug: String,
-    pub created_by: User,
-    pub modified_by: User,
+    pub created_by: String,
     pub created_at: DateTime<Utc>,
-    pub updated_at: DateTime<Utc>,
+    pub modified_by: String,
+    pub modified_at: DateTime<Utc>,
 }
 
 impl Project {
-    pub fn new(
-        name: String,
-        description: String,
-        slug: String,
-        created_by: User,
-        modified_by: User,
-    ) -> Self {
+    pub fn new(name: String, description: String, slug: String) -> Self {
         Self {
             id: None,
             name,
             description,
             slug,
-            created_by,
-            modified_by,
+            created_by: "Anonymous".to_string(),
             created_at: Utc::now(),
-            updated_at: Utc::now(),
+            modified_by: "Anonymous".to_string(),
+            modified_at: Utc::now(),
         }
     }
 
