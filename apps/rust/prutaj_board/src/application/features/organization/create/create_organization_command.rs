@@ -35,6 +35,7 @@ impl CommandHandler<CreateOrganizationCommand> for CreateOrganizationCommandHand
             command.owner,
             command.slug,
         )
+        .set_created("Anonymous")
         .create(&self.db)
         .await
         .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

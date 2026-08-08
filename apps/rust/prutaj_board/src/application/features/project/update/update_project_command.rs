@@ -35,9 +35,9 @@ impl CommandHandler<UpdateProjectCommand> for UpdateProjectCommandHandler {
             slug: command.slug,
             created_by: project.created_by.clone(),
             created_at: project.created_at,
-            modified_by: project.modified_by.clone(),
-            modified_at: Utc::now(),
-        };
+            ..Default::default()
+        }
+        .set_modified("Anonymous");
 
         let updated = project
             .update(&self.db, &command.id, content)

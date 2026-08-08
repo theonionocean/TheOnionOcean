@@ -1,4 +1,3 @@
-use chrono::Utc;
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
@@ -37,9 +36,9 @@ impl CommandHandler<UpdateTaskCommand> for UpdateTaskCommandHandler {
             project: task.project.clone(),
             created_by: task.created_by.clone(),
             created_at: task.created_at,
-            modified_by: task.modified_by.clone(),
-            modified_at: Utc::now(),
-        };
+            ..Default::default()
+        }
+        .set_modified("Anonymous");
 
         let updated = task
             .update(&self.db, &command.id, content)

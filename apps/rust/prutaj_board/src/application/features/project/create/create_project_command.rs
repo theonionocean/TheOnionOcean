@@ -3,7 +3,7 @@ use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
 use utoipa::ToSchema;
 
-use crate::{entity::Project, User};
+use crate::entity::Project;
 
 #[derive(Deserialize, ToSchema)]
 pub struct CreateProjectCommand {
@@ -25,6 +25,7 @@ impl CommandHandler<CreateProjectCommand> for CreateProjectCommandHandler {
         let project = Project::new(command.name, command.description, command.slug);
 
         let project = project
+            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

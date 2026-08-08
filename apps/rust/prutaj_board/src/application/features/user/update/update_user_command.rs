@@ -32,9 +32,9 @@ impl CommandHandler<UpdateUserCommand> for UpdateUserCommandHandler {
             email: command.email,
             created_by: user.created_by.clone(),
             created_at: user.created_at,
-            modified_by: user.modified_by.clone(),
-            modified_at: chrono::Utc::now(),
-        };
+            ..Default::default()
+        }
+        .set_modified("Anonymous");
 
         let updated = user
             .update(&self.db, command.id.as_str(), content)

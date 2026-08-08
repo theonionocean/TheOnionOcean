@@ -22,10 +22,6 @@ pub struct CreateTaskCommandHandler {
 
 impl CommandHandler<CreateTaskCommand> for CreateTaskCommandHandler {
     async fn handle(&self, command: CreateTaskCommand) -> Result<Task, MediatrError> {
-        let user = User::find(&self.db, "01KYCKGYEPH91ADW1TP5J19AXB")
-            .await
-            .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
-
         // TODO: Change id to existing project id
         let project = Project::find(&self.db, "01KYCKGYEPH91ADW1TP5J19AXB")
             .await
@@ -40,6 +36,7 @@ impl CommandHandler<CreateTaskCommand> for CreateTaskCommandHandler {
         );
 
         let task = task
+            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

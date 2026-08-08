@@ -35,9 +35,9 @@ impl CommandHandler<UpdateTeamCommand> for UpdateTeamCommandHandler {
             projects: team.projects.clone(),
             created_by: team.created_by.clone(),
             created_at: team.created_at,
-            modified_by: team.modified_by.clone(),
-            modified_at: Utc::now(),
-        };
+            ..Default::default()
+        }
+        .set_modified("Anonymous");
 
         let updated = team
             .update(&self.db, command.id.as_str(), content)

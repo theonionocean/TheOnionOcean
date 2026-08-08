@@ -1,4 +1,3 @@
-use chrono::Utc;
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
@@ -43,9 +42,9 @@ impl CommandHandler<UpdateOrganizationCommand> for UpdateOrganizationCommandHand
             teams: organization.teams.clone(),
             created_by: organization.created_by.clone(),
             created_at: organization.created_at,
-            modified_by: organization.modified_by.clone(),
-            modified_at: Utc::now(),
-        };
+            ..Default::default()
+        }
+        .set_modified("Anonymous");
 
         let updated = organization
             .update(&self.db, command.id.as_str(), content)

@@ -22,6 +22,7 @@ pub struct CreateUserCommandHandler {
 impl CommandHandler<CreateUserCommand> for CreateUserCommandHandler {
     async fn handle(&self, command: CreateUserCommand) -> Result<User, MediatrError> {
         let user = User::new(command.name, command.email)
+            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
