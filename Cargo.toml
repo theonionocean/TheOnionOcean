@@ -5,6 +5,7 @@ members = [
 	'lib/rust/mediatr',
 	'apps/rust/prutaj_board',
 	'lib/rust/surrealdb_extensions',
+	'lib/rust/macros',
 ]
 
 [workspace.dependencies.actix-web]
@@ -29,6 +30,12 @@ version = '0.15.7'
 [workspace.dependencies.utoipa]
 version = '5.4.0'
 features = ['yaml', 'actix_extras', 'chrono']
+
+[workspace.dependencies.quote]
+version = '1.0.47'
+
+[workspace.dependencies.syn]
+version = '3.0.3'
 
 [patch.crates-io]
 diskann-wide = { path = 'vendor/diskann-wide' }

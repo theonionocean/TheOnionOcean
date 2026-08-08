@@ -3,9 +3,11 @@
 		"global",
 		"lib/rust/mediatr",
 		"lib/rust/surrealdb_extensions",
+		"lib/rust/macros",
 		"prutaj_board",
 		"infra"
 	],
+	"direnv.restart.automatic": true,
 	"terminal.integrated.env.linux": {
 		"PATH": "${env:HOME}/.local/bin:${env:PATH}"
 	},
