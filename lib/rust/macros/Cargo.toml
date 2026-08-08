@@ -1,8 +1,16 @@
 [package]
-name = "lib_rust_macros"
+name = "macros"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
+[lib]
+proc-macro = true
+
+[dependencies.quote]
+workspace = true
+
+[dependencies.syn]
+workspace = true
+features = ["full", "parsing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

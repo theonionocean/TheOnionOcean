@@ -1,26 +1,23 @@
 {
-  "name": "lib_rust_macros",
+  "name": "macros",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "./lib/rust/macros/src",
+  "tags": ["type:lib", "lang:rust"],
   "targets": {
     "build": {
       "executor": "@monodon/rust:check",
-      "outputs": [
-        "{options.target-dir}"
-      ],
+      "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/lib_rust_macros"
+        "target-dir": "dist/target/macros"
       }
     },
     "test": {
       "cache": true,
       "executor": "@monodon/rust:test",
-      "outputs": [
-        "{options.target-dir}"
-      ],
+      "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/lib_rust_macros"
+        "target-dir": "dist/target/macros"
       },
       "configurations": {
         "production": {
@@ -31,13 +28,10 @@
     "lint": {
       "cache": true,
       "executor": "@monodon/rust:lint",
-      "outputs": [
-        "{options.target-dir}"
-      ],
+      "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/lib_rust_macros"
+        "target-dir": "dist/target/macros"
       }
     }
-  },
-  "tags": []
+  }
 }
