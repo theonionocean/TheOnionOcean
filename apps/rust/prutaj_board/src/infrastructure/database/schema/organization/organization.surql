@@ -29,7 +29,7 @@ DEFINE EVENT OVERWRITE setup_organization ON organization WHEN $event = "CREATE"
 		description = "Owner of the organization",
 		kind = "system",
 		permissions = (SELECT VALUE id FROM organization_permission),
-		created_by = $after.owner;
+		created_by = $after.owner.id;
 
 	LET $owner = $after.owner;
 	LET $org = $after.id;

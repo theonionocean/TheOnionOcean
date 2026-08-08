@@ -8,7 +8,14 @@ DEFINE FIELD OVERWRITE email ON user TYPE string
 
 DEFINE FIELD OVERWRITE name ON user TYPE string;
 
+DEFINE FIELD OVERWRITE created_by ON user TYPE string;
+
 DEFINE FIELD OVERWRITE created_at ON user TYPE datetime
+	DEFAULT time::now();
+
+DEFINE FIELD OVERWRITE modified_by ON user TYPE string;
+
+DEFINE FIELD OVERWRITE modified_at ON user TYPE datetime
 	DEFAULT time::now();
 
 DEFINE INDEX OVERWRITE user_email_unique ON user FIELDS email UNIQUE;

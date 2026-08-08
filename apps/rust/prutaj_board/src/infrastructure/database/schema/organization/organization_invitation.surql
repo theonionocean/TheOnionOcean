@@ -1,7 +1,7 @@
 DEFINE TABLE OVERWRITE organization_invitation SCHEMAFULL
 	PERMISSIONS
 		FOR create WHERE fn::organization::permissible($auth, organization_role.organization, "employees/manage")
-		FOR select, update WHERE created_by = $auth;
+		FOR select, update WHERE created_by = $auth.id;
 
 DEFINE FIELD OVERWRITE organization_role ON organization_invitation TYPE record<organization_role>;
 
@@ -18,8 +18,8 @@ DEFINE FIELD OVERWRITE used_at ON organization_invitation TYPE option<datetime>;
 
 DEFINE FIELD OVERWRITE used_by ON organization_invitation TYPE option<record<user>>;
 
-DEFINE FIELD OVERWRITE created_by ON organization_invitation TYPE record<user>
-	DEFAULT $auth;
+DEFINE FIELD OVERWRITE created_by ON organization_invitation TYPE string
+	DEFAULT $auth.id;
 
 DEFINE INDEX OVERWRITE organization_invitation_unique ON organization_invitation
 	FIELDS email, organization_role UNIQUE;

@@ -19,7 +19,7 @@ DEFINE FIELD OVERWRITE sort_order ON organization_role TYPE number DEFAULT 0;
 DEFINE FIELD OVERWRITE permissions ON organization_role TYPE array<record<organization_permission>>
 	DEFAULT [];
 
-DEFINE FIELD OVERWRITE created_by ON organization_role TYPE record<user>;
+DEFINE FIELD OVERWRITE created_by ON organization_role TYPE string;
 
 DEFINE INDEX OVERWRITE organization_role_unique ON organization_role
 	FIELDS organization, name UNIQUE;

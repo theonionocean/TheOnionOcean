@@ -9,7 +9,7 @@ LET $member_role = CREATE ONLY organization_role SET
 	organization = organization:acme,
 	description = "Standard member",
 	permissions = [organization_permission:employees_view],
-	created_by = user:alice;
+	created_by = user:alice.id;
 RELATE user:bob->employee_of->organization:acme CONTENT {
 	role: $member_role.id,
 	title: "Member",
