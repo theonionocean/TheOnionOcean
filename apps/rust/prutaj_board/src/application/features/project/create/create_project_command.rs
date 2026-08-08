@@ -22,17 +22,7 @@ pub struct CreateProjectCommandHandler {
 
 impl CommandHandler<CreateProjectCommand> for CreateProjectCommandHandler {
     async fn handle(&self, command: CreateProjectCommand) -> Result<Project, MediatrError> {
-        let user = User::find(&self.db, "01KYCKGYEPH91ADW1TP5J19AXB")
-            .await
-            .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;
-
-        let project = Project::new(
-            command.name,
-            command.description,
-            command.slug,
-            user.clone(),
-            user,
-        );
+        let project = Project::new(command.name, command.description, command.slug);
 
         let project = project
             .create(&self.db)

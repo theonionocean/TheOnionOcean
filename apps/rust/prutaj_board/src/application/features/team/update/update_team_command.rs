@@ -1,4 +1,5 @@
 use crate::{entity::Team, Organization};
+use chrono::Utc;
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
@@ -32,7 +33,10 @@ impl CommandHandler<UpdateTeamCommand> for UpdateTeamCommandHandler {
             organization: command.organization,
             parent: team.parent.clone(),
             projects: team.projects.clone(),
+            created_by: team.created_by.clone(),
             created_at: team.created_at,
+            modified_by: team.modified_by.clone(),
+            modified_at: Utc::now(),
         };
 
         let updated = team

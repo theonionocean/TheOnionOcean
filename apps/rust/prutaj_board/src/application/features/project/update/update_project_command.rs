@@ -1,3 +1,4 @@
+use chrono::Utc;
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
@@ -33,9 +34,9 @@ impl CommandHandler<UpdateProjectCommand> for UpdateProjectCommandHandler {
             description: command.description,
             slug: command.slug,
             created_by: project.created_by.clone(),
-            modified_by: project.modified_by.clone(),
             created_at: project.created_at,
-            updated_at: project.updated_at,
+            modified_by: project.modified_by.clone(),
+            modified_at: Utc::now(),
         };
 
         let updated = project

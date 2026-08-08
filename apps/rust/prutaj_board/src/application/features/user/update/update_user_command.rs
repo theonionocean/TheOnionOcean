@@ -30,7 +30,10 @@ impl CommandHandler<UpdateUserCommand> for UpdateUserCommandHandler {
             id: user.id.clone(),
             name: command.name,
             email: command.email,
+            created_by: user.created_by.clone(),
             created_at: user.created_at,
+            modified_by: user.modified_by.clone(),
+            modified_at: chrono::Utc::now(),
         };
 
         let updated = user

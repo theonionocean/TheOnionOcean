@@ -11,8 +11,6 @@ use surrealdb_extensions::{
 };
 use utoipa::ToSchema;
 
-use crate::User;
-
 const TABLE_NAME: &str = "project";
 
 #[derive(SurrealValue, Serialize, Deserialize, Debug, Clone, ToSchema, AuditibleEntity)]

@@ -37,8 +37,6 @@ impl CommandHandler<CreateTaskCommand> for CreateTaskCommandHandler {
             command.status,
             None,
             project,
-            user.clone(),
-            user,
         );
 
         let task = task
