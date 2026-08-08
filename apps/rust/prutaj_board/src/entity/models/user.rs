@@ -25,15 +25,10 @@ pub struct User {
 
 impl User {
     pub fn new(name: String, email: String) -> Self {
-        let now = Utc::now();
         Self {
-            id: None,
             name,
             email,
-            created_by: "Anonymous".to_string(),
-            created_at: now,
-            modified_by: "Anonymous".to_string(),
-            modified_at: now,
+            ..Default::default()
         }
     }
 

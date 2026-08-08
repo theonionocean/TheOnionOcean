@@ -17,13 +17,9 @@ pub struct OrganizationPermission {
 impl OrganizationPermission {
     pub fn new(name: String, description: Option<String>) -> Self {
         Self {
-            id: None,
             name,
             description,
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 }

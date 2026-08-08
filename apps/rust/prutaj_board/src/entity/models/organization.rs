@@ -39,17 +39,12 @@ impl Organization {
         slug: String,
     ) -> Self {
         Self {
-            id: None,
             name,
             legal_name,
             logo,
             owner,
             slug,
-            teams: Vec::new(),
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 

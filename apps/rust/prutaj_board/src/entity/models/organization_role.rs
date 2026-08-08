@@ -30,17 +30,13 @@ impl OrganizationRole {
         sort_order: i32,
     ) -> Self {
         Self {
-            id: None,
             name,
             organization,
             description,
             kind,
             permissions,
             sort_order,
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 }

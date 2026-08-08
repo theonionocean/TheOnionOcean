@@ -29,14 +29,10 @@ pub struct Project {
 impl Project {
     pub fn new(name: String, description: String, slug: String) -> Self {
         Self {
-            id: None,
             name,
             description,
             slug,
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 

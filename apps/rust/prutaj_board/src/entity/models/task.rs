@@ -39,16 +39,12 @@ impl Task {
         project: Project,
     ) -> Self {
         Self {
-            id: None,
             title,
             description,
             status,
             assigned_to,
             project,
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 

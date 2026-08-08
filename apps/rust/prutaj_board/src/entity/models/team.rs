@@ -32,15 +32,9 @@ pub struct Team {
 impl Team {
     pub fn new(name: String, organization: Organization) -> Self {
         Self {
-            id: None,
             name,
             organization,
-            parent: Box::new(None),
-            projects: Vec::new(),
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 

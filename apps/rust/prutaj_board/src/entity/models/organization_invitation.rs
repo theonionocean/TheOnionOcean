@@ -30,18 +30,12 @@ impl OrganizationInvitation {
         teams: Vec<Team>,
     ) -> Self {
         Self {
-            id: None,
             organization_role,
             email,
             token: Ulid::generate().to_string(),
             expires,
             teams,
-            used_at: None,
-            used_by: None,
-            created_by: "Anonymous".to_string(),
-            created_at: Utc::now(),
-            modified_by: "Anonymous".to_string(),
-            modified_at: Utc::now(),
+            ..Default::default()
         }
     }
 }
