@@ -1,5 +1,4 @@
 use crate::{entity::Team, Organization};
-use chrono::Utc;
 use mediatr::{Command, CommandHandler, MediatrError};
 use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
@@ -36,8 +35,7 @@ impl CommandHandler<UpdateTeamCommand> for UpdateTeamCommandHandler {
             created_by: team.created_by.clone(),
             created_at: team.created_at,
             ..Default::default()
-        }
-        .set_modified("Anonymous");
+        };
 
         let updated = team
             .update(&self.db, command.id.as_str(), content)

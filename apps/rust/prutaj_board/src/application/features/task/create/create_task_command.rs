@@ -3,7 +3,7 @@ use serde::Deserialize;
 use surrealdb::{engine::remote::ws::Client, Surreal};
 use utoipa::ToSchema;
 
-use crate::{entity::Task, Project, User};
+use crate::{entity::Task, Project};
 
 #[derive(Deserialize, ToSchema)]
 pub struct CreateTaskCommand {
@@ -36,7 +36,6 @@ impl CommandHandler<CreateTaskCommand> for CreateTaskCommandHandler {
         );
 
         let task = task
-            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

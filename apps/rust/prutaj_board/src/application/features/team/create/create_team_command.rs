@@ -23,7 +23,6 @@ pub struct CreateTeamCommandHandler {
 impl CommandHandler<CreateTeamCommand> for CreateTeamCommandHandler {
     async fn handle(&self, command: CreateTeamCommand) -> Result<Team, MediatrError> {
         let team = Team::new(command.name, command.organization)
-            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

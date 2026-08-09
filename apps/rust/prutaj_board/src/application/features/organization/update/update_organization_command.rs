@@ -43,8 +43,7 @@ impl CommandHandler<UpdateOrganizationCommand> for UpdateOrganizationCommandHand
             created_by: organization.created_by.clone(),
             created_at: organization.created_at,
             ..Default::default()
-        }
-        .set_modified("Anonymous");
+        };
 
         let updated = organization
             .update(&self.db, command.id.as_str(), content)

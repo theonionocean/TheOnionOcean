@@ -37,8 +37,7 @@ impl CommandHandler<UpdateTaskCommand> for UpdateTaskCommandHandler {
             created_by: task.created_by.clone(),
             created_at: task.created_at,
             ..Default::default()
-        }
-        .set_modified("Anonymous");
+        };
 
         let updated = task
             .update(&self.db, &command.id, content)

@@ -25,7 +25,6 @@ impl CommandHandler<CreateProjectCommand> for CreateProjectCommandHandler {
         let project = Project::new(command.name, command.description, command.slug);
 
         let project = project
-            .set_created("Anonymous")
             .create(&self.db)
             .await
             .map_err(|e| MediatrError::HandlerFailed(e.to_string()))?;

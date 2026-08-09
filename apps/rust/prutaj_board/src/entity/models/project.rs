@@ -1,5 +1,5 @@
 use chrono::{DateTime, Utc};
-use macros::AuditibleEntity;
+use macros_derive::AuditibleEntity;
 use serde::{Deserialize, Serialize};
 use surrealdb::{
     engine::remote::ws::Client,

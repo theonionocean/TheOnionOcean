@@ -33,8 +33,7 @@ impl CommandHandler<UpdateUserCommand> for UpdateUserCommandHandler {
             created_by: user.created_by.clone(),
             created_at: user.created_at,
             ..Default::default()
-        }
-        .set_modified("Anonymous");
+        };
 
         let updated = user
             .update(&self.db, command.id.as_str(), content)
