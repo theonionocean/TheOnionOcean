@@ -1,15 +1,15 @@
 {
-  "name": "macros",
+  "name": "macros_abstraction",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "./lib/rust/macros/src",
+  "sourceRoot": "./lib/rust/macros_abstraction/src",
   "tags": ["type:lib", "lang:rust"],
   "targets": {
     "build": {
       "executor": "@monodon/rust:check",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/macros"
+        "target-dir": "dist/target/macros_abstraction"
       }
     },
     "test": {
@@ -17,7 +17,7 @@
       "executor": "@monodon/rust:test",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/macros"
+        "target-dir": "dist/target/macros_abstraction"
       },
       "configurations": {
         "production": {
@@ -30,7 +30,7 @@
       "executor": "@monodon/rust:lint",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/macros"
+        "target-dir": "dist/target/macros_abstraction"
       }
     }
   }

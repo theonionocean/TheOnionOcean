@@ -2549,7 +2549,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "macros"
+name = "macros_abstraction"
+version = "0.1.0"
+dependencies = [
+ "macros_derive",
+]
+
+[[package]]
+name = "macros_derive"
 version = "0.1.0"
 dependencies = [
  "quote",
@@ -3203,7 +3210,8 @@ dependencies = [
  "actix-web",
  "chrono",
  "dotenvy",
- "macros",
+ "macros_abstraction",
+ "macros_derive",
  "mediatr",
  "serde",
  "surrealdb",
@@ -4550,6 +4558,7 @@ dependencies = [
 name = "surrealdb_extensions"
 version = "0.1.0"
 dependencies = [
+ "macros_abstraction",
  "surrealdb",
  "ulid 3.0.0",
 ]

@@ -1,5 +1,5 @@
 [package]
-name = "macros"
+name = "macros_derive"
 version = "0.1.0"
 edition = "2021"
 
@@ -12,5 +12,3 @@ workspace = true
 [dependencies.syn]
 workspace = true
 features = ["full", "parsing"]
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

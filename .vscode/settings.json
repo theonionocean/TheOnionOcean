@@ -3,7 +3,8 @@
 		"global",
 		"lib/rust/mediatr",
 		"lib/rust/surrealdb_extensions",
-		"lib/rust/macros",
+		"lib/rust/macros_abstraction",
+		"lib/rust/macros_derive",
 		"prutaj_board",
 		"infra"
 	],

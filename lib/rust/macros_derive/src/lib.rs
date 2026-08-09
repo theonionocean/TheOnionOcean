@@ -46,8 +46,8 @@ pub fn auditible_entity(input: TokenStream) -> TokenStream {
     }
 
     quote! {
-        impl #impl_generics #name #ty_generics #where_clause {
-            pub fn set_created(mut self, by: impl Into<String>) -> Self {
+        impl #impl_generics ::macros_abstraction::AuditableEntity for #name #ty_generics #where_clause {
+            fn set_created(mut self, by: impl Into<String>) -> Self {
                 let now = ::chrono::Utc::now();
                 let by = by.into();
                 self.created_by = by.clone();
@@ -57,7 +57,7 @@ pub fn auditible_entity(input: TokenStream) -> TokenStream {
                 self
             }
 
-            pub fn set_modified(mut self, by: impl Into<String>) -> Self {
+            fn set_modified(mut self, by: impl Into<String>) -> Self {
                 self.modified_by = by.into();
                 self.modified_at = ::chrono::Utc::now();
                 self
