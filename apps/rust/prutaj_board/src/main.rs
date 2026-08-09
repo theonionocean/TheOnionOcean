@@ -1,4 +1,5 @@
-use actix_web::{web, App, HttpServer};
+use actix_web::{middleware::Logger, web, App, HttpServer};
+use env_logger::{init_from_env, Env};
 use mediatr::Mediatr;
 use prutaj_board::{
     create_organization, create_project, create_task, create_team, create_user,
@@ -18,6 +19,7 @@ use surrealdb_extensions::DatabaseContext;
 #[actix_web::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     dotenvy::from_filename("infra/prutaj_board/prutaj-board.env").ok();
+    init_from_env(Env::default().default_filter_or("info"));
 
     let host = std::env::var("SURREALDB_HOST")
         .unwrap_or_else(|e| panic!("SURREALDB_HOST is not set: {e}"));
@@ -108,6 +110,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     HttpServer::new(move || {
         App::new()
+            .wrap(Logger::default())
+            .wrap(Logger::new(
+                r#"%t %{r}a "%r" %s %b "%{Host}i" "%{Referer}i" "%{User-Agent}i" "%{Content-Type}i" "%{Content-Type}o" %Dms"#
+            ))
             .app_data(web::Data::new(mediatr.clone()))
             .service(
                 web::scope("/api")
