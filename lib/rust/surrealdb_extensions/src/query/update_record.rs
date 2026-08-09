@@ -1,12 +1,13 @@
 use std::future::Future;
 
+use macros_abstraction::AuditableEntity;
 use surrealdb::{engine::remote::ws::Client, types::SurrealValue, Surreal};
 
 use crate::SurrealDbError;
 
 pub trait UpdateRecord<T>: Sized
 where
-    T: SurrealValue + Send,
+    T: SurrealValue + AuditableEntity + Send,
 {
     fn update_record(
         self,
@@ -19,7 +20,7 @@ where
 
 impl<T> UpdateRecord<T> for T
 where
-    T: SurrealValue + Send,
+    T: SurrealValue + AuditableEntity + Send,
 {
     async fn update_record(
         self,
@@ -30,7 +31,7 @@ where
     ) -> Result<Self, SurrealDbError> {
         let result = db
             .update((record_type, id))
-            .content(content)
+            .content(content.set_modified("Anonymous"))
             .await?
             .ok_or(SurrealDbError::InternalError(record_type.to_string()))?;
 

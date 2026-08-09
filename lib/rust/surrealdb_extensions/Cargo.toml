@@ -3,6 +3,9 @@ name = "surrealdb_extensions"
 version = "0.1.0"
 edition = "2021"
 
+[dependencies]
+macros_abstraction = { path = "../macros_abstraction" }
+
 [dependencies.surrealdb]
 workspace = true
 

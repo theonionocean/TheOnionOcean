@@ -1,12 +1,13 @@
 use std::future::Future;
 
+use macros_abstraction::AuditableEntity;
 use surrealdb::{engine::remote::ws::Client, types::SurrealValue, Surreal};
 
 use crate::SurrealDbError;
 
 pub trait CreateRecord<T>: Sized
 where
-    T: SurrealValue + Send,
+    T: SurrealValue + AuditableEntity + Send,
 {
     fn create_record(
         self,
@@ -17,7 +18,7 @@ where
 
 impl<T> CreateRecord<T> for T
 where
-    T: SurrealValue + Send,
+    T: SurrealValue + AuditableEntity + Send,
 {
     async fn create_record(
         self,
