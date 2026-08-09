@@ -10,13 +10,13 @@ members = [
 ]
 
 [workspace.dependencies.actix-web]
-version = '4.14.0'
+version = '4.14.1'
 
 [workspace.dependencies.chrono]
 version = '0.4.45'
 
 [workspace.dependencies.surrealdb]
-version = '3.2.1'
+version = '3.2.4'
 features = ['kv-rocksdb']
 
 [workspace.dependencies.serde]
@@ -29,7 +29,7 @@ version = '3.0.0'
 version = '0.15.7'
 
 [workspace.dependencies.utoipa]
-version = '5.4.0'
+version = '5.5.0'
 features = ['yaml', 'actix_extras', 'chrono']
 
 [workspace.dependencies.quote]
