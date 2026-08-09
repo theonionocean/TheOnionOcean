@@ -32,6 +32,9 @@ workspace = true
 [dependencies.utoipa]
 workspace = true
 
+[dependencies.env_logger]
+workspace = true
+
 [[bin]]
 name = "generate_openapi"
 path = "src/bin/generate_openapi.rs"
