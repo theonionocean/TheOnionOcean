@@ -37,6 +37,7 @@ in
       surrealkit
       mold
       sccache
+      mkcert
     ];
 
     shellHook = ''
