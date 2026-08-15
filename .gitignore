@@ -4,6 +4,7 @@ dist
 result
 *.env
 specification.yml
+**/certs/**
 
 .nx/cache
 .nx/workspace-data
