@@ -1,6 +1,6 @@
 services:
   prutaj-surrealdb:
-    image: surrealdb/surrealdb:v3.2.0-dev
+    image: surrealdb/surrealdb:${SURREALDB_VERSION}
     container_name: prutaj-surrealdb
     env_file:
       - ./prutaj-board.env
