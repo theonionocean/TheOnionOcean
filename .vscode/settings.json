@@ -9,6 +9,7 @@
 		"infra"
 	],
 	"direnv.restart.automatic": true,
+	"rust-analyzer.server.path": "rust-analyzer",
 	"terminal.integrated.env.linux": {
 		"PATH": "${env:HOME}/.local/bin:${env:PATH}"
 	},
