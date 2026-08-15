@@ -22,6 +22,9 @@ features = ['kv-rocksdb']
 [workspace.dependencies.serde]
 version = '1.0.229'
 
+[workspace.dependencies.serde_json]
+version = '1.0.151'
+
 [workspace.dependencies.ulid]
 version = '3.0.0'
 
@@ -40,6 +43,13 @@ version = '3.0.3'
 
 [workspace.dependencies.env_logger]
 version = '0.11.11'
+
+[workspace.dependencies.zitadel]
+version = "5.7.7"
+features = ['actix']
+
+[workspace.dependencies.reqwest]
+version = '0.12.12'
 
 [patch.crates-io]
 diskann-wide = { path = 'vendor/diskann-wide' }

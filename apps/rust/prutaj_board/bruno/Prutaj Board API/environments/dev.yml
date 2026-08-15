@@ -1,4 +1,14 @@
-name: Development
+name: dev
 variables:
   - name: baseUrl
     value: http://localhost:5278
+  - name: authBaseUrl
+    value: https://auth.localhost
+  - name: authOAuthCallbackUrl
+    value: https://oauth.usebruno.com/callback
+  - name: authApiClientId
+    value: "386408209977507851"
+  - name: authApiScope
+    value: openid profile email offline_access
+  - name: authAccessToken
+    value:

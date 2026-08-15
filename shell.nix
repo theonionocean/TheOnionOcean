@@ -38,6 +38,7 @@ in
       mold
       sccache
       mkcert
+      openssl
     ];
 
     shellHook = ''

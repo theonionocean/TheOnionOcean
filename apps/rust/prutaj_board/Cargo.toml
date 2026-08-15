@@ -23,6 +23,9 @@ features = ["kv-rocksdb"]
 [dependencies.serde]
 workspace = true
 
+[dependencies.serde_json]
+workspace = true
+
 [dependencies.ulid]
 workspace = true
 
@@ -33,6 +36,12 @@ workspace = true
 workspace = true
 
 [dependencies.env_logger]
+workspace = true
+
+[dependencies.zitadel]
+workspace = true
+
+[dependencies.reqwest]
 workspace = true
 
 [[bin]]
