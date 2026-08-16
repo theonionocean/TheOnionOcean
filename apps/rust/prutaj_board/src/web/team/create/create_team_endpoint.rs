@@ -18,7 +18,7 @@ use crate::{CreateTeamCommand, Team};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[post("/team/create")]
+#[post("/create")]
 pub async fn create_team(mediatr: Data<Mediatr>, req: Json<CreateTeamCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

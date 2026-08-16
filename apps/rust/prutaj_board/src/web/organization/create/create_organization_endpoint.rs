@@ -18,7 +18,7 @@ use crate::{CreateOrganizationCommand, Organization};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[post("/organization/create")]
+#[post("/create")]
 pub async fn create_organization(
     mediatr: Data<Mediatr>,
     req: Json<CreateOrganizationCommand>,

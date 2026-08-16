@@ -18,7 +18,7 @@ use crate::{CreateProjectCommand, Project};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[post("/project/create")]
+#[post("/create")]
 pub async fn create_project(
     mediatr: Data<Mediatr>,
     req: Json<CreateProjectCommand>,

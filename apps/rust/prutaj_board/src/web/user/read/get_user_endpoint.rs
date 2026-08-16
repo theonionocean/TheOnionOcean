@@ -20,7 +20,7 @@ use crate::{GetUserQuery, User};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[get("/user/get/{id}")]
+#[get("/get/{id}")]
 pub async fn get_user(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetUserQuery {
         id: path.into_inner(),

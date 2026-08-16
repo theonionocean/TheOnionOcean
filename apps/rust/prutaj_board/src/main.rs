@@ -1,19 +1,10 @@
 use actix_web::{middleware::Logger, web, App, HttpServer};
 use env_logger::{init_from_env, Env};
-use mediatr::Mediatr;
-use prutaj_board::{
-    create_organization, create_project, create_task, create_team, create_user,
-    delete_organization, delete_project, delete_task, delete_team, delete_user, get_organization,
-    get_project, get_task, get_team, get_user, update_organization, update_project, update_task,
-    update_team, update_user, CreateOrganizationCommandHandler, CreateProjectCommandHandler,
-    CreateTaskCommandHandler, CreateTeamCommandHandler, CreateUserCommandHandler,
-    DeleteOrganizationCommandHandler, DeleteProjectCommandHandler, DeleteTaskCommandHandler,
-    DeleteTeamCommandHandler, DeleteUserCommandHandler, GetOrganizationQueryHandler,
-    GetProjectQueryHandler, GetTaskQueryHandler, GetTeamQueryHandler, GetUserQueryHandler,
-    UpdateOrganizationCommandHandler, UpdateProjectCommandHandler, UpdateTaskCommandHandler,
-    UpdateTeamCommandHandler, UpdateUserCommandHandler,
-};
 
+use prutaj_board::{
+    register_endpoints, register_organization_endpoints, register_project_endpoints,
+    register_task_endpoints, register_team_endpoints, register_user_endpoints,
+};
 use surrealdb_extensions::DatabaseContext;
 use zitadel::{actix::introspection::IntrospectionConfigBuilder, credentials::Application};
 
@@ -42,74 +33,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let context = DatabaseContext::new(host, username, password, ns, db).await?;
 
-    let mut mediatr = Mediatr::default();
-
-    // organization
-    mediatr.register_command(CreateOrganizationCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_query(GetOrganizationQueryHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(UpdateOrganizationCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(DeleteOrganizationCommandHandler {
-        db: context.db().clone(),
-    });
-    // project
-    mediatr.register_command(CreateProjectCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_query(GetProjectQueryHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(UpdateProjectCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(DeleteProjectCommandHandler {
-        db: context.db().clone(),
-    });
-    // task
-    mediatr.register_command(CreateTaskCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_query(GetTaskQueryHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(UpdateTaskCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(DeleteTaskCommandHandler {
-        db: context.db().clone(),
-    });
-    // team
-    mediatr.register_command(CreateTeamCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_query(GetTeamQueryHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(UpdateTeamCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(DeleteTeamCommandHandler {
-        db: context.db().clone(),
-    });
-    // user
-    mediatr.register_command(CreateUserCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_query(GetUserQueryHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(UpdateUserCommandHandler {
-        db: context.db().clone(),
-    });
-    mediatr.register_command(DeleteUserCommandHandler {
-        db: context.db().clone(),
-    });
-
     let auth_key_id = std::env::var("ZITADEL_APPLICATION_KEY_ID")
         .unwrap_or_else(|e| panic!("ZITADEL_APPLICATION_KEY_ID is not set: {e}"));
     let auth_key = std::env::var("ZITADEL_APPLICATION_KEY")
@@ -120,6 +43,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .unwrap_or_else(|e| panic!("ZITADEL_APPLICATION_CLIENT_ID is not set: {e}"));
     let auth_url = std::env::var("ZITADEL_EXTERNAL_DOMAIN")
         .unwrap_or_else(|e| panic!("ZITADEL_EXTERNAL_DOMAIN is not set: {e}"));
+
+    let mediatr = register_endpoints(context.clone());
 
     let service_account = serde_json::json!({
         "keyId": auth_key_id,
@@ -145,34 +70,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             ))
             .app_data(web::Data::new(mediatr.clone()))
             .app_data(auth.clone())
-            .service(
-                web::scope("/api")
-                    // organization
-                    .service(create_organization)
-                    .service(get_organization)
-                    .service(update_organization)
-                    .service(delete_organization)
-                    // project
-                    .service(create_project)
-                    .service(get_project)
-                    .service(update_project)
-                    .service(delete_project)
-                    // task
-                    .service(create_task)
-                    .service(get_task)
-                    .service(update_task)
-                    .service(delete_task)
-                    // team
-                    .service(create_team)
-                    .service(get_team)
-                    .service(update_team)
-                    .service(delete_team)
-                    // user
-                    .service(create_user)
-                    .service(get_user)
-                    .service(update_user)
-                    .service(delete_user),
-            )
+            .service(register_organization_endpoints())
+            .service(register_project_endpoints())
+            .service(register_task_endpoints())
+            .service(register_team_endpoints())
+            .service(register_user_endpoints())
     })
     .bind((app_host.as_str(), app_port))?
     .run()

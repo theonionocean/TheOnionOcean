@@ -20,7 +20,7 @@ use crate::{GetProjectQuery, Project};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[get("/project/get/{id}")]
+#[get("/get/{id}")]
 pub async fn get_project(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetProjectQuery {
         id: path.into_inner(),

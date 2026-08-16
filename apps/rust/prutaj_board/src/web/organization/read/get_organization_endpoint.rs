@@ -20,7 +20,7 @@ use crate::{GetOrganizationQuery, Organization};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[get("/organization/get/{id}")]
+#[get("/get/{id}")]
 pub async fn get_organization(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetOrganizationQuery {
         id: path.into_inner(),

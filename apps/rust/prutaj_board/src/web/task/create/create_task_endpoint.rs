@@ -18,7 +18,7 @@ use crate::{CreateTaskCommand, Task};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[post("/task/create")]
+#[post("/create")]
 pub async fn create_task(mediatr: Data<Mediatr>, req: Json<CreateTaskCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

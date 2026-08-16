@@ -20,7 +20,7 @@ use crate::{GetTaskQuery, Task};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[get("/task/get/{id}")]
+#[get("/get/{id}")]
 pub async fn get_task(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetTaskQuery {
         id: path.into_inner(),

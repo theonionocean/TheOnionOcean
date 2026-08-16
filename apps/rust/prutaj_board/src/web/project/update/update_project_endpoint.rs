@@ -18,7 +18,7 @@ use crate::{Project, UpdateProjectCommand};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[put("/project/update")]
+#[put("/update")]
 pub async fn update_project(
     mediatr: Data<Mediatr>,
     req: Json<UpdateProjectCommand>,

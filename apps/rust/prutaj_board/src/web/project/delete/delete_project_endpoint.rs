@@ -18,7 +18,7 @@ use crate::DeleteProjectCommand;
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[delete("/project/delete")]
+#[delete("/delete")]
 pub async fn delete_project(
     mediatr: Data<Mediatr>,
     req: Json<DeleteProjectCommand>,

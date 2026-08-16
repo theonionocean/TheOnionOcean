@@ -18,7 +18,7 @@ use crate::DeleteOrganizationCommand;
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[delete("/organization/delete")]
+#[delete("/delete")]
 pub async fn delete_organization(
     mediatr: Data<Mediatr>,
     req: Json<DeleteOrganizationCommand>,

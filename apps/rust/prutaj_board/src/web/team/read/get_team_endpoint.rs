@@ -20,7 +20,7 @@ use crate::{GetTeamQuery, Team};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[get("/team/get/{id}")]
+#[get("/get/{id}")]
 pub async fn get_team(mediatr: Data<Mediatr>, path: Path<String>) -> impl Responder {
     let query = GetTeamQuery {
         id: path.into_inner(),

@@ -18,7 +18,7 @@ use crate::DeleteTaskCommand;
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[delete("/task/delete")]
+#[delete("/delete")]
 pub async fn delete_task(mediatr: Data<Mediatr>, req: Json<DeleteTaskCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

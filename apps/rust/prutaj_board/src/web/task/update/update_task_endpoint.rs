@@ -18,7 +18,7 @@ use crate::{Task, UpdateTaskCommand};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[put("/task/update")]
+#[put("/update")]
 pub async fn update_task(mediatr: Data<Mediatr>, req: Json<UpdateTaskCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

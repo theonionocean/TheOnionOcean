@@ -18,7 +18,7 @@ use crate::{CreateUserCommand, User};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[post("/user/create")]
+#[post("/create")]
 pub async fn create_user(mediatr: Data<Mediatr>, req: Json<CreateUserCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

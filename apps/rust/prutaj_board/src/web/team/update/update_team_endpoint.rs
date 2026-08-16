@@ -18,7 +18,7 @@ use crate::{Team, UpdateTeamCommand};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[put("/team/update")]
+#[put("/update")]
 pub async fn update_team(mediatr: Data<Mediatr>, req: Json<UpdateTeamCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;

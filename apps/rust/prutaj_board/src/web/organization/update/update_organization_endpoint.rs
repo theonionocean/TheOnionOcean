@@ -18,7 +18,7 @@ use crate::{Organization, UpdateOrganizationCommand};
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[put("/organization/update")]
+#[put("/update")]
 pub async fn update_organization(
     mediatr: Data<Mediatr>,
     req: Json<UpdateOrganizationCommand>,

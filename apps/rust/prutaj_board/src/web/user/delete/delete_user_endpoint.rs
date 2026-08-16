@@ -18,7 +18,7 @@ use crate::DeleteUserCommand;
         (status = 500, description = "Internal server error", body = String)
     )
 )]
-#[delete("/user/delete")]
+#[delete("/delete")]
 pub async fn delete_user(mediatr: Data<Mediatr>, req: Json<DeleteUserCommand>) -> impl Responder {
     let command = req.into_inner();
     let result = mediatr.send_command(command).await;
