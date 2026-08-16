@@ -4,6 +4,7 @@ use surrealdb::{
     Surreal,
 };
 
+#[derive(Clone)]
 pub struct DatabaseContext {
     db: Surreal<Client>,
 }
