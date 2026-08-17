@@ -5,6 +5,7 @@
 		"lib/rust/surrealdb_extensions",
 		"lib/rust/macros_abstraction",
 		"lib/rust/macros_derive",
+		"lib/rust/macros_security",
 		"prutaj_board",
 		"infra"
 	],

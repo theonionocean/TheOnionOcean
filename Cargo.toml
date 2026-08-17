@@ -7,6 +7,7 @@ members = [
 	'lib/rust/surrealdb_extensions',
 	'lib/rust/macros_abstraction',
 	'lib/rust/macros_derive',
+	'lib/rust/macros_security',
 ]
 
 [workspace.dependencies.actix-web]
@@ -45,7 +46,7 @@ version = '3.0.3'
 version = '0.11.11'
 
 [workspace.dependencies.zitadel]
-version = "5.7.7"
+version = '5.7.7'
 features = ['actix']
 
 [workspace.dependencies.reqwest]
