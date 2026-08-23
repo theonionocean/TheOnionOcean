@@ -7,9 +7,9 @@ default-run = "prutaj_board"
 [dependencies]
 mediatr = { path = "../../../lib/rust/mediatr" }
 surrealdb_extensions = { path = "../../../lib/rust/surrealdb_extensions" }
-macros_abstraction = { path = "../../../lib/rust/macros_abstraction" }
-macros_derive = { path = "../../../lib/rust/macros_derive" }
-macros_security_core = { path = "../../../lib/rust/macros_security_core" }
+macros_abstraction = { path = "../../../lib/rust/macros/derive/macros_abstraction" }
+macros_derive = { path = "../../../lib/rust/macros/derive/macros_derive" }
+macros_security_core = { path = "../../../lib/rust/macros/security/macros_security_core" }
 
 [dependencies.actix-web]
 workspace = true

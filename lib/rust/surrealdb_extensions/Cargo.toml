@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-macros_abstraction = { path = "../macros_abstraction" }
+macros_abstraction = { path = "../macros/derive/macros_abstraction" }
 
 [dependencies.surrealdb]
 workspace = true
