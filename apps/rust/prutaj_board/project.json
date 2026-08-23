@@ -51,6 +51,13 @@
         }
       }
     },
+    "serve": {
+      "continuous": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "watchexec --restart --exts rs,toml --watch apps/rust/prutaj_board --watch lib/rust -- cargo run -p prutaj_board --target-dir dist/target/prutaj_board"
+      }
+    },
     "generate-openapi": {
       "executor": "@monodon/rust:run",
       "outputs": ["{options.target-dir}", "{projectRoot}/specification.yml"],

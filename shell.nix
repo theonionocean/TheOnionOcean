@@ -34,6 +34,7 @@ in
       rustc
       rustPlatform.rustLibSrc
       just
+      watchexec
       surrealkit
       mold
       sccache
