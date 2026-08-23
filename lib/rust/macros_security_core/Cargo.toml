@@ -3,4 +3,13 @@ name = "macros_security_core"
 version = "0.1.0"
 edition = "2021"
 
+[dependencies]
+macros_security = { path = "../macros_security" }
+
+[dependencies.zitadel]
+workspace = true
+
+[dependencies.actix-web]
+workspace = true
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

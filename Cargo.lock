@@ -2908,6 +2908,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "macros_security_core"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "macros_security",
+ "zitadel",
+]
+
+[[package]]
 name = "maplit"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
