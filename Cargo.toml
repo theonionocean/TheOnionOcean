@@ -8,6 +8,7 @@ members = [
 	'lib/rust/macros_abstraction',
 	'lib/rust/macros_derive',
 	'lib/rust/macros_security',
+	'lib/rust/macros_security_core',
 ]
 
 [workspace.dependencies.actix-web]
