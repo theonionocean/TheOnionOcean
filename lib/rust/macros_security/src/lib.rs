@@ -14,12 +14,8 @@ pub fn has_role(attr: TokenStream, item: TokenStream) -> TokenStream {
 
     let original_block = func.block;
     func.block = parse_quote! {{
-        let __has_role = __auth_user
-            .project_roles
-            .as_ref()
-            .is_some_and(|__roles| __roles.contains_key(#role));
-        if !__has_role {
-            return ::actix_web::HttpResponse::Forbidden().json("missing required role");
+        if let Err(__deny) = ::macros_security_core::require_role(&__auth_user, #role) {
+            return __deny;
         }
         #original_block
     }};
