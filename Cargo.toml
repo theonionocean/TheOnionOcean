@@ -9,6 +9,7 @@ members = [
 	'lib/rust/macros/derive/macros_derive',
 	'lib/rust/macros/security/macros_security',
 	'lib/rust/macros/security/macros_security_core',
+	'lib/rust/pass_me',
 ]
 
 [workspace.dependencies.actix-web]

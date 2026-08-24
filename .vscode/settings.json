@@ -2,6 +2,7 @@
 	"conventionalCommits.scopes": [
 		"global",
 		"lib/rust/mediatr",
+		"lib/rust/pass_me",
 		"lib/rust/surrealdb_extensions",
 		"lib/rust/macros/derive/macros_abstraction",
 		"lib/rust/macros/derive/macros_derive",
