@@ -10,6 +10,7 @@ members = [
 	'lib/rust/macros/security/macros_security',
 	'lib/rust/macros/security/macros_security_core',
 	'lib/rust/pass_me',
+	'lib/rust/pass_me_core',
 ]
 
 [workspace.dependencies.actix-web]
@@ -43,6 +44,12 @@ version = '1.0.47'
 
 [workspace.dependencies.syn]
 version = '3.0.3'
+
+[workspace.dependencies.proc-macro2]
+version = '1.0.107'
+
+[workspace.dependencies.darling]
+version = '0.24.1'
 
 [workspace.dependencies.env_logger]
 version = '0.11.11'
