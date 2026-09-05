@@ -1,8 +1,7 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
+mod error;
+
+pub use error::ValidationError;
+
+pub trait UniquenessChecker {
+    fn is_unique(&self, field: &str, value: &str) -> bool;
 }
