@@ -1,4 +1,3 @@
-mod error;
 mod validators;
 
 use proc_macro::TokenStream;
@@ -6,7 +5,6 @@ use quote::quote;
 use syn::{parse_macro_input, DeriveInput};
 use syn::{Data::Struct, Fields::Named};
 
-pub use error::ValidationError;
 use validators::all_validators;
 
 #[proc_macro_derive(Validate, attributes(non_null_or_empty, unique))]
@@ -56,12 +54,12 @@ pub fn derive_validate(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         impl #name {
-            pub fn validate(&self) -> Vec<ValidationError> {
+            pub fn validate(&self) -> Vec<::pass_me_core::ValidationError> {
                 let mut errors = Vec::new();
                 #( #sync_checks )*
                 errors
             }
-            pub fn validate_with(&self, checker: &dyn UniquenessChecker) -> Vec<ValidationError> {
+            pub fn validate_with(&self, checker: &dyn ::pass_me_core::UniquenessChecker) -> Vec<::pass_me_core::ValidationError> {
                 let mut errors = self.validate();
                 #( #stateful_checks )*
                 errors
