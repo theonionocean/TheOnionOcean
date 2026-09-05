@@ -25,8 +25,8 @@ impl FieldValidator for NonNullOrEmpty {
                     .unwrap_or_else(|| format!("{} cannot be null or empty", field_name));
 
                 quote! {
-                    if #field_ident.is_none() || #field_ident.is_empty() {
-                        errors.push(ValidationError { field: #field_name, error_message: #error_message, code: #error_code });
+                    if self.#field_ident.is_empty() {
+                        errors.push(::pass_me_core::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
                     }
                 }
             }
