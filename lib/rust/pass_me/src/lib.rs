@@ -59,7 +59,10 @@ pub fn derive_validate(input: TokenStream) -> TokenStream {
                 #( #sync_checks )*
                 errors
             }
-            pub fn validate_with(&self, checker: &dyn ::pass_me_core::UniquenessChecker) -> Vec<::pass_me_core::ValidationError> {
+            pub async fn validate_with<C: ::pass_me_core::UniquenessChecker>(
+                &self,
+                checker: &C,
+            ) -> Vec<::pass_me_core::ValidationError> {
                 let mut errors = self.validate();
                 #( #stateful_checks )*
                 errors
