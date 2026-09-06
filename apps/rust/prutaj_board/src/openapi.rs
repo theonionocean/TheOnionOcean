@@ -10,8 +10,8 @@ use crate::{
     CreateOrganizationCommand, CreateProjectCommand, CreateTaskCommand, CreateTeamCommand,
     CreateUserCommand, DeleteOrganizationCommand, DeleteProjectCommand, DeleteTaskCommand,
     DeleteTeamCommand, DeleteUserCommand, GetOrganizationQuery, GetTeamQuery, Organization,
-    Project, Task, Team, UpdateOrganizationCommand, UpdateProjectCommand, UpdateTaskCommand,
-    UpdateTeamCommand, UpdateUserCommand, User,
+    ProblemDetails, Project, Task, Team, UpdateOrganizationCommand, UpdateProjectCommand,
+    UpdateTaskCommand, UpdateTeamCommand, UpdateUserCommand, User, ValidationProblem,
 };
 
 #[derive(OpenApi)]
@@ -64,6 +64,8 @@ use crate::{
         DeleteTeamCommand,
         Organization,
         Team,
+        ProblemDetails,
+        ValidationProblem,
     )),
     tags(
         (name = "project", description = "Project management"),

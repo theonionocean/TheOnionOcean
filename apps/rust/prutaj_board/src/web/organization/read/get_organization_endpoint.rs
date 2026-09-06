@@ -5,7 +5,7 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::{GetOrganizationQuery, Organization};
+use crate::{GetOrganizationQuery, Organization, ProblemDetails};
 
 #[utoipa::path(
     get,
@@ -17,7 +17,9 @@ use crate::{GetOrganizationQuery, Organization};
     ),
     responses(
         (status = 200, description = "Organization retrieved successfully", body = Organization),
-        (status = 500, description = "Internal server error", body = String)
+        (status = 400, description = "Validation failed", body = ProblemDetails),
+        (status = 500, description = "Internal server error", body = ProblemDetails),
+        (status = 501, description = "Not implemented", body = ProblemDetails)
     )
 )]
 #[get("/get/{id}")]
@@ -28,6 +30,6 @@ pub async fn get_organization(mediatr: Data<Mediatr>, path: Path<String>) -> imp
     let result = mediatr.send_query(query).await;
     match result {
         Ok(organization) => HttpResponse::Ok().json(organization),
-        Err(e) => HttpResponse::InternalServerError().json(e.to_string()),
+        Err(e) => crate::problem_details::into_response(e),
     }
 }
