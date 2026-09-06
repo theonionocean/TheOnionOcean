@@ -5,7 +5,7 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::{Team, UpdateTeamCommand};
+use crate::{Team, UpdateTeamCommand, ProblemDetails};
 
 #[utoipa::path(
     put,
@@ -15,7 +15,9 @@ use crate::{Team, UpdateTeamCommand};
     request_body = UpdateTeamCommand,
     responses(
         (status = 200, description = "Team updated successfully", body = Team),
-        (status = 500, description = "Internal server error", body = String)
+        (status = 400, description = "Validation failed", body = ProblemDetails),
+        (status = 500, description = "Internal server error", body = ProblemDetails),
+        (status = 501, description = "Not implemented", body = ProblemDetails)
     )
 )]
 #[put("/update")]
@@ -24,6 +26,6 @@ pub async fn update_team(mediatr: Data<Mediatr>, req: Json<UpdateTeamCommand>) -
     let result = mediatr.send_command(command).await;
     match result {
         Ok(team) => HttpResponse::Ok().json(team),
-        Err(e) => HttpResponse::InternalServerError().json(e.to_string()),
+        Err(e) => crate::problem_details::into_response(e),
     }
 }

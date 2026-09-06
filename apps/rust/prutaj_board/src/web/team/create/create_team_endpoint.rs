@@ -5,7 +5,7 @@ use actix_web::{
 };
 use mediatr::Mediatr;
 
-use crate::{CreateTeamCommand, Team};
+use crate::{CreateTeamCommand, Team, ProblemDetails};
 
 #[utoipa::path(
     post,
@@ -15,7 +15,9 @@ use crate::{CreateTeamCommand, Team};
     request_body = CreateTeamCommand,
     responses(
         (status = 200, description = "Team created successfully", body = Team),
-        (status = 500, description = "Internal server error", body = String)
+        (status = 400, description = "Validation failed", body = ProblemDetails),
+        (status = 500, description = "Internal server error", body = ProblemDetails),
+        (status = 501, description = "Not implemented", body = ProblemDetails)
     )
 )]
 #[post("/create")]
@@ -24,6 +26,6 @@ pub async fn create_team(mediatr: Data<Mediatr>, req: Json<CreateTeamCommand>) -
     let result = mediatr.send_command(command).await;
     match result {
         Ok(team) => HttpResponse::Ok().json(team),
-        Err(e) => HttpResponse::InternalServerError().json(e.to_string()),
+        Err(e) => crate::problem_details::into_response(e),
     }
 }
