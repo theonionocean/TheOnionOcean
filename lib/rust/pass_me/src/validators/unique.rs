@@ -29,7 +29,7 @@ impl FieldValidator for Unique {
                     .unwrap_or_else(|| format!("{} must be unique", field_name));
 
                 quote! {
-                    if !checker.is_unique(#field_name, &self.#field_ident) {
+                    if !checker.is_unique(#field_name, &self.#field_ident).await {
                         errors.push(::pass_me_core::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
                     }
                 }
