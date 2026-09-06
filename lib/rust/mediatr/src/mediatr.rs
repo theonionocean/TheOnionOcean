@@ -11,37 +11,63 @@ use crate::{mediatr_error::MediatrError, Command, CommandHandler, Query, QueryHa
 
 type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
 
-macro_rules! define_handler_wrapper {
-    ($wrapper:ident, $handler_trait:ident, $message_trait:ident) => {
-        struct $wrapper<H, M> {
-            handler: H,
-            _message: PhantomData<M>,
-        }
-
-        impl<H, M> DynamicHandler for $wrapper<H, M>
-        where
-            H: $handler_trait<M> + 'static,
-            M: $message_trait + Send + Sync + 'static,
-            M::Response: Send + 'static,
-        {
-            fn handle(
-                &self,
-                request: Box<dyn Any + Send>,
-            ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>> {
-                Box::pin(async move {
-                    let request = *request.downcast::<M>().map_err(|_| {
-                        MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string())
-                    })?;
-                    let response = self.handler.handle(request).await?;
-                    Ok(Box::new(response) as Box<dyn Any + Send>)
-                })
-            }
-        }
-    };
+struct QueryHandlerWrapper<H, M> {
+    handler: H,
+    _message: PhantomData<M>,
 }
 
-define_handler_wrapper!(QueryHandlerWrapper, QueryHandler, Query);
-define_handler_wrapper!(CommandHandlerWrapper, CommandHandler, Command);
+impl<H, M> DynamicHandler for QueryHandlerWrapper<H, M>
+where
+    H: QueryHandler<M> + 'static,
+    M: Query + Send + Sync + 'static,
+    M::Response: Send + 'static,
+{
+    fn handle(
+        &self,
+        request: Box<dyn Any + Send>,
+    ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>> {
+        Box::pin(async move {
+            let request = *request.downcast::<M>().map_err(|_| {
+                MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string())
+            })?;
+            let errors = self.handler.validate(&request).await;
+            if !errors.is_empty() {
+                return Err(MediatrError::ValidationFailed(errors));
+            }
+            let response = self.handler.handle(request).await?;
+            Ok(Box::new(response) as Box<dyn Any + Send>)
+        })
+    }
+}
+
+struct CommandHandlerWrapper<H, M> {
+    handler: H,
+    _message: PhantomData<M>,
+}
+
+impl<H, M> DynamicHandler for CommandHandlerWrapper<H, M>
+where
+    H: CommandHandler<M> + 'static,
+    M: Command + Send + Sync + 'static,
+    M::Response: Send + 'static,
+{
+    fn handle(
+        &self,
+        request: Box<dyn Any + Send>,
+    ) -> BoxFuture<'_, Result<Box<dyn Any + Send>, MediatrError>> {
+        Box::pin(async move {
+            let request = *request.downcast::<M>().map_err(|_| {
+                MediatrError::HandlerNotFound(std::any::type_name::<M>().to_string())
+            })?;
+            let errors = self.handler.validate(&request).await;
+            if !errors.is_empty() {
+                return Err(MediatrError::ValidationFailed(errors));
+            }
+            let response = self.handler.handle(request).await?;
+            Ok(Box::new(response) as Box<dyn Any + Send>)
+        })
+    }
+}
 
 trait DynamicHandler: Send + Sync {
     fn handle(
