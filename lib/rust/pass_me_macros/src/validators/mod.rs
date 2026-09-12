@@ -1,4 +1,5 @@
 mod equal;
+mod not_equal;
 mod not_null_or_empty;
 mod unique;
 
@@ -8,11 +9,17 @@ use syn::{Attribute, Ident, Lit};
 use darling::FromMeta;
 
 pub use equal::Equal;
+pub use not_equal::NotEqual;
 pub use not_null_or_empty::NotNullOrEmpty;
 pub use unique::Unique;
 
 pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
-    vec![Box::new(NotNullOrEmpty), Box::new(Unique), Box::new(Equal)]
+    vec![
+        Box::new(NotNullOrEmpty),
+        Box::new(Unique),
+        Box::new(Equal),
+        Box::new(NotEqual),
+    ]
 }
 
 pub trait FieldValidator {
