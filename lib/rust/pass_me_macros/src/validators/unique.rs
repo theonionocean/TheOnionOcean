@@ -30,11 +30,12 @@ impl FieldValidator for Unique {
 
                 quote! {
                     if !checker.is_unique(#field_name, &self.#field_ident).await {
-                        errors.push(::pass_me_core::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
+                        errors.push(::pass_me::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
                     }
                 }
             }
             Err(e) => {
+                // TODO: Change panic to graceful error handling
                 panic!("Failed to parse unique attributes: {}", e.to_string());
             }
         }

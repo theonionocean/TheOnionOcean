@@ -3,23 +3,8 @@ name = "pass_me"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-proc-macro = true
-
 [dependencies]
 pass_me_core = { path = "../pass_me_core" }
-
-[dependencies.syn]
-workspace = true
-features = ["full", "parsing"]
-
-[dependencies.quote]
-workspace = true
-
-[dependencies.proc-macro2]
-workspace = true
-
-[dependencies.darling]
-workspace = true
+pass_me_macros = { path = "../pass_me_macros" }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

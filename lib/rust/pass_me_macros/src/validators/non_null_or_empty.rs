@@ -25,12 +25,13 @@ impl FieldValidator for NonNullOrEmpty {
                     .unwrap_or_else(|| format!("{} cannot be null or empty", field_name));
 
                 quote! {
-                    if self.#field_ident.is_empty() {
-                        errors.push(::pass_me_core::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
+                    if self.#field_ident.is_empty() || self.#field_ident.is_none() {
+                        errors.push(::pass_me::ValidationError { field: #field_name, error_message: #error_message.to_string(), code: #error_code.to_string() });
                     }
                 }
             }
             Err(e) => {
+                // TODO: Change panic to graceful error handling
                 panic!(
                     "Failed to parse non_null_or_empty attributes: {}",
                     e.to_string()
