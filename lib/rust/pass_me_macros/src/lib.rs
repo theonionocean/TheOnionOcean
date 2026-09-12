@@ -7,7 +7,7 @@ use syn::{Data::Struct, Fields::Named};
 
 use validators::all_validators;
 
-#[proc_macro_derive(Validate, attributes(non_null_or_empty, unique))]
+#[proc_macro_derive(Validate, attributes(non_null_or_empty, unique, equal))]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = &input.ident;
