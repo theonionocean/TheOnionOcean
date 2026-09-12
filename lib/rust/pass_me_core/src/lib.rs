@@ -2,7 +2,7 @@ mod error;
 mod validators;
 
 pub use error::ValidationError;
-pub use validators::{Equal, NotNullOrEmpty};
+pub use validators::{Equal, Length, NotNullOrEmpty};
 
 pub trait UniquenessChecker {
     fn is_unique(
