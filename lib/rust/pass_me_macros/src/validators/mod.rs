@@ -1,4 +1,4 @@
-mod non_null_or_empty;
+mod not_null_or_empty;
 mod unique;
 
 use proc_macro2::TokenStream;
@@ -6,11 +6,11 @@ use syn::{Attribute, Ident};
 
 use darling::FromMeta;
 
-pub use non_null_or_empty::NonNullOrEmpty;
+pub use not_null_or_empty::NotNullOrEmpty;
 pub use unique::Unique;
 
 pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
-    vec![Box::new(NonNullOrEmpty), Box::new(Unique)]
+    vec![Box::new(NotNullOrEmpty), Box::new(Unique)]
 }
 
 pub trait FieldValidator {
