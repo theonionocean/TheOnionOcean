@@ -1,6 +1,8 @@
 mod error;
+mod validators;
 
 pub use error::ValidationError;
+pub use validators::NotNullOrEmpty;
 
 pub trait UniquenessChecker {
     fn is_unique(
