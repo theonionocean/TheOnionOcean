@@ -1,4 +1,4 @@
-use pass_me_core::ValidationError;
+use pass_me::ValidationError;
 
 #[derive(Debug)]
 pub enum MediatrError {

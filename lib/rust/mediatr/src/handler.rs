@@ -1,6 +1,6 @@
 use std::future::Future;
 
-use pass_me_core::ValidationError;
+use pass_me::ValidationError;
 
 use crate::{mediatr_error::MediatrError, Command, Query};
 
