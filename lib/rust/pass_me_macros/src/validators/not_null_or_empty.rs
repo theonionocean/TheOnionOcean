@@ -1,9 +1,8 @@
-use darling::FromMeta;
 use proc_macro2::TokenStream;
 use quote::quote;
 use syn::{Attribute, Ident};
 
-use crate::validators::{Args, FieldValidator};
+use crate::validators::{parse_meta_args, Args, FieldValidator};
 
 pub struct NotNullOrEmpty;
 
@@ -13,7 +12,7 @@ impl FieldValidator for NotNullOrEmpty {
     }
 
     fn generate(&self, attr: &Attribute, field_ident: &Ident, field_name: &str) -> TokenStream {
-        let args: Result<Args, darling::Error> = FromMeta::from_meta(&attr.meta);
+        let args: Result<Args, darling::Error> = parse_meta_args(&attr.meta);
 
         match args {
             Ok(args) => {
