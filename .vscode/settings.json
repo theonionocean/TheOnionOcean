@@ -4,6 +4,7 @@
 		"lib/rust/mediatr",
 		"lib/rust/pass_me",
 		"lib/rust/pass_me_core",
+		"lib/rust/pass_me_macros",
 		"lib/rust/surrealdb_extensions",
 		"lib/rust/macros/derive/macros_abstraction",
 		"lib/rust/macros/derive/macros_derive",

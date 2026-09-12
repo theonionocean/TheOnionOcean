@@ -11,6 +11,7 @@ members = [
 	'lib/rust/macros/security/macros_security_core',
 	'lib/rust/pass_me',
 	'lib/rust/pass_me_core',
+	'lib/rust/pass_me_macros',
 ]
 
 [workspace.dependencies.actix-web]
