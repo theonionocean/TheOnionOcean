@@ -3439,15 +3439,23 @@ dependencies = [
 name = "pass_me"
 version = "0.1.0"
 dependencies = [
- "darling 0.24.1",
- "proc-macro2",
- "quote",
- "syn 3.0.3",
+ "pass_me_core",
+ "pass_me_macros",
 ]
 
 [[package]]
 name = "pass_me_core"
 version = "0.1.0"
+
+[[package]]
+name = "pass_me_macros"
+version = "0.1.0"
+dependencies = [
+ "darling 0.24.1",
+ "proc-macro2",
+ "quote",
+ "syn 3.0.3",
+]
 
 [[package]]
 name = "password-hash"
