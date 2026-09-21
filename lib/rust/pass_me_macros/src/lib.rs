@@ -9,7 +9,15 @@ use validators::all_validators;
 
 #[proc_macro_derive(
     Validate,
-    attributes(non_null_or_empty, unique, equal, not_equal, length, max_length)
+    attributes(
+        non_null_or_empty,
+        unique,
+        equal,
+        not_equal,
+        length,
+        max_length,
+        min_length
+    )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
