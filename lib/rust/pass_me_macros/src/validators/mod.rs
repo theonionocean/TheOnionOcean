@@ -1,5 +1,6 @@
 mod equal;
 mod length;
+mod max_length;
 mod not_equal;
 mod not_null_or_empty;
 mod unique;
@@ -11,6 +12,7 @@ use darling::FromMeta;
 
 pub use equal::Equal;
 pub use length::Length;
+pub use max_length::MaxLength;
 pub use not_equal::NotEqual;
 pub use not_null_or_empty::NotNullOrEmpty;
 pub use unique::Unique;
@@ -22,6 +24,7 @@ pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
         Box::new(Equal),
         Box::new(NotEqual),
         Box::new(Length),
+        Box::new(MaxLength),
     ]
 }
 
@@ -59,4 +62,11 @@ pub struct LengthArgs {
     error_message: Option<String>,
     min: Option<usize>,
     max: Option<usize>,
+}
+
+#[derive(FromMeta)]
+pub struct MaxLengthArgs {
+    error_code: Option<String>,
+    error_message: Option<String>,
+    max: usize,
 }
