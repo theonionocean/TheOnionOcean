@@ -7,7 +7,7 @@ pub use validators::{
     NumberValueLessThan, NumberValueLessThanOrEqual,
 };
 
-pub trait UniquenessChecker {
-    fn is_unique(&self, field: &str, value: &str)
+pub trait MustChecker {
+    fn must(&self, field: &str, value: &str)
         -> impl std::future::Future<Output = bool> + Send;
 }

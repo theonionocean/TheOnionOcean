@@ -8,7 +8,7 @@ mod max_length;
 mod min_length;
 mod not_equal;
 mod not_null_or_empty;
-mod unique;
+mod must;
 
 use proc_macro2::TokenStream;
 use syn::{Attribute, Ident, Lit, Meta};
@@ -25,12 +25,12 @@ pub use max_length::MaxLength;
 pub use min_length::MinLength;
 pub use not_equal::NotEqual;
 pub use not_null_or_empty::NotNullOrEmpty;
-pub use unique::Unique;
+pub use must::Must;
 
 pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
     vec![
         Box::new(NotNullOrEmpty),
-        Box::new(Unique),
+        Box::new(Must),
         Box::new(Equal),
         Box::new(NotEqual),
         Box::new(Length),

@@ -11,7 +11,7 @@ use validators::all_validators;
     Validate,
     attributes(
         non_null_or_empty,
-        unique,
+        must,
         equal,
         not_equal,
         length,
@@ -74,7 +74,7 @@ pub fn derive_validate(input: TokenStream) -> TokenStream {
                 #( #sync_checks )*
                 errors
             }
-            pub async fn validate_with<C: ::pass_me::UniquenessChecker>(
+            pub async fn validate_with<C: ::pass_me::MustChecker>(
                 &self,
                 checker: &C,
             ) -> Vec<::pass_me::ValidationError> {
