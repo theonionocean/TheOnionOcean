@@ -7,6 +7,7 @@ use crate::validators::{EqualArgs, FieldValidator};
 
 pub struct Equal;
 
+// TODO: Move to parser module
 fn lit_display(lit: &Lit) -> String {
     match lit {
         Lit::Str(s) => s.value(),
@@ -17,6 +18,7 @@ fn lit_display(lit: &Lit) -> String {
     }
 }
 
+// TODO: Move to parser module
 fn lit_as_tokens(lit: &Lit) -> TokenStream {
     match lit {
         Lit::Str(s) => {
