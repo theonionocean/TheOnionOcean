@@ -16,7 +16,11 @@ use validators::all_validators;
         not_equal,
         length,
         max_length,
-        min_length
+        min_length,
+        less_then,
+        less_then_or_equal,
+        greater_then,
+        greater_then_or_equal,
     )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
