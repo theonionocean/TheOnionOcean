@@ -62,6 +62,9 @@ features = ['actix']
 [workspace.dependencies.reqwest]
 version = '0.12.12'
 
+[workspace.dependencies.regex]
+version = '1.13.1'
+
 [patch.crates-io]
 diskann-wide = { path = 'vendor/diskann-wide' }
 
