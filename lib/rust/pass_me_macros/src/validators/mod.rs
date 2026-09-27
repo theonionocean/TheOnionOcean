@@ -4,11 +4,12 @@ mod greater_then_or_equal;
 mod length;
 mod less_then;
 mod less_then_or_equal;
+mod matches;
 mod max_length;
 mod min_length;
+mod must;
 mod not_equal;
 mod not_null_or_empty;
-mod must;
 
 use proc_macro2::TokenStream;
 use syn::{Attribute, Ident, Lit, Meta};
@@ -21,11 +22,12 @@ pub use greater_then_or_equal::GreaterThenOrEqual;
 pub use length::Length;
 pub use less_then::LessThen;
 pub use less_then_or_equal::LessThenOrEqual;
+pub use matches::Matches;
 pub use max_length::MaxLength;
 pub use min_length::MinLength;
+pub use must::Must;
 pub use not_equal::NotEqual;
 pub use not_null_or_empty::NotNullOrEmpty;
-pub use must::Must;
 
 pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
     vec![
@@ -40,6 +42,7 @@ pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
         Box::new(LessThenOrEqual),
         Box::new(GreaterThen),
         Box::new(GreaterThenOrEqual),
+        Box::new(Matches),
     ]
 }
 
@@ -98,4 +101,11 @@ pub struct NumberValueArgs {
     error_code: Option<String>,
     error_message: Option<String>,
     value: Lit,
+}
+
+#[derive(FromMeta)]
+pub struct MatchesArgs {
+    error_code: Option<String>,
+    error_message: Option<String>,
+    pattern: String,
 }
