@@ -1,3 +1,4 @@
+mod credit_card;
 mod email;
 mod equal;
 mod length;
@@ -5,6 +6,7 @@ mod matches;
 mod not_null_or_empty;
 mod number_value;
 
+pub use credit_card::CreditCard;
 pub use email::Email;
 pub use equal::Equal;
 pub use length::Length;

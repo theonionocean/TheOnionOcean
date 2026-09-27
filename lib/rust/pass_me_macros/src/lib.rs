@@ -23,6 +23,7 @@ use validators::all_validators;
         greater_then_or_equal,
         matches,
         email,
+        credit_card,
     )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
