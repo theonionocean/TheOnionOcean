@@ -21,6 +21,7 @@ use validators::all_validators;
         less_then_or_equal,
         greater_then,
         greater_then_or_equal,
+        matches,
     )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
