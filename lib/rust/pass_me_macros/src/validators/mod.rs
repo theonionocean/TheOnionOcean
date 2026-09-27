@@ -1,3 +1,4 @@
+mod email;
 mod equal;
 mod greater_then;
 mod greater_then_or_equal;
@@ -16,6 +17,7 @@ use syn::{Attribute, Ident, Lit, Meta};
 
 use darling::FromMeta;
 
+pub use email::Email;
 pub use equal::Equal;
 pub use greater_then::GreaterThen;
 pub use greater_then_or_equal::GreaterThenOrEqual;
@@ -43,6 +45,7 @@ pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
         Box::new(GreaterThen),
         Box::new(GreaterThenOrEqual),
         Box::new(Matches),
+        Box::new(Email),
     ]
 }
 

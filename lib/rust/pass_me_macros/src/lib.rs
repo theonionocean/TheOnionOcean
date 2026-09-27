@@ -22,6 +22,7 @@ use validators::all_validators;
         greater_then,
         greater_then_or_equal,
         matches,
+        email,
     )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
