@@ -3,7 +3,7 @@ mod validators;
 
 pub use error::ValidationError;
 pub use validators::{
-    Email, Equal, Length, Matches, NotNullOrEmpty, NumberValueGreaterThan,
+    CreditCard, Email, Equal, Length, Matches, NotNullOrEmpty, NumberValueGreaterThan,
     NumberValueGreaterThanOrEqual, NumberValueLessThan, NumberValueLessThanOrEqual,
 };
 
