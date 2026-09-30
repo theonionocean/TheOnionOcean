@@ -3,8 +3,9 @@ mod validators;
 
 pub use error::ValidationError;
 pub use validators::{
-    CreditCard, Email, Equal, Length, Matches, NotNullOrEmpty, NumberValueGreaterThan,
-    NumberValueGreaterThanOrEqual, NumberValueLessThan, NumberValueLessThanOrEqual,
+    CreditCard, Email, Equal, ExclusiveBetween, InclusiveBetween, Length, Matches, NotNullOrEmpty,
+    NumberValueGreaterThan, NumberValueGreaterThanOrEqual, NumberValueLessThan,
+    NumberValueLessThanOrEqual,
 };
 
 pub trait MustChecker {

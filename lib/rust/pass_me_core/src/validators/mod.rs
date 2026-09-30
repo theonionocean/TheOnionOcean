@@ -13,6 +13,6 @@ pub use length::Length;
 pub use matches::Matches;
 pub use not_null_or_empty::NotNullOrEmpty;
 pub use number_value::{
-    NumberValueGreaterThan, NumberValueGreaterThanOrEqual, NumberValueLessThan,
-    NumberValueLessThanOrEqual,
+    ExclusiveBetween, InclusiveBetween, NumberValueGreaterThan, NumberValueGreaterThanOrEqual,
+    NumberValueLessThan, NumberValueLessThanOrEqual,
 };
