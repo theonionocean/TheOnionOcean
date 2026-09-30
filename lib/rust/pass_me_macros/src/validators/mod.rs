@@ -12,6 +12,7 @@ mod min_length;
 mod must;
 mod not_equal;
 mod not_null_or_empty;
+mod null_or_empty;
 
 use proc_macro2::TokenStream;
 use syn::{Attribute, Ident, Lit, Meta};
@@ -32,6 +33,7 @@ pub use min_length::MinLength;
 pub use must::Must;
 pub use not_equal::NotEqual;
 pub use not_null_or_empty::NotNullOrEmpty;
+pub use null_or_empty::NullOrEmpty;
 
 pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
     vec![
@@ -49,6 +51,7 @@ pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
         Box::new(Matches),
         Box::new(Email),
         Box::new(CreditCard),
+        Box::new(NullOrEmpty),
     ]
 }
 
