@@ -1,8 +1,10 @@
 mod credit_card;
 mod email;
 mod equal;
+mod exclusive_between;
 mod greater_then;
 mod greater_then_or_equal;
+mod inclusive_between;
 mod length;
 mod less_then;
 mod less_then_or_equal;
@@ -22,8 +24,10 @@ use darling::FromMeta;
 pub use credit_card::CreditCard;
 pub use email::Email;
 pub use equal::Equal;
+pub use exclusive_between::ExclusiveBetween;
 pub use greater_then::GreaterThen;
 pub use greater_then_or_equal::GreaterThenOrEqual;
+pub use inclusive_between::InclusiveBetween;
 pub use length::Length;
 pub use less_then::LessThen;
 pub use less_then_or_equal::LessThenOrEqual;
@@ -52,6 +56,8 @@ pub fn all_validators() -> Vec<Box<dyn FieldValidator>> {
         Box::new(Email),
         Box::new(CreditCard),
         Box::new(NullOrEmpty),
+        Box::new(ExclusiveBetween),
+        Box::new(InclusiveBetween),
     ]
 }
 
@@ -117,4 +123,12 @@ pub struct MatchesArgs {
     error_code: Option<String>,
     error_message: Option<String>,
     pattern: String,
+}
+
+#[derive(FromMeta)]
+pub struct BetweenNumbersArgs {
+    error_code: Option<String>,
+    error_message: Option<String>,
+    min: Lit,
+    max: Lit,
 }

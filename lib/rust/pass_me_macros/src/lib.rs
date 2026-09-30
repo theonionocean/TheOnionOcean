@@ -25,6 +25,8 @@ use validators::all_validators;
         email,
         credit_card,
         null_or_empty,
+        exclusive_between,
+        inclusive_between
     )
 )]
 pub fn derive_validate(input: TokenStream) -> TokenStream {
