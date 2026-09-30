@@ -100,7 +100,8 @@ Typical mediatr wiring: implement `CommandHandler::validate` by calling `command
 
 | Attribute | Behavior |
 |-----------|----------|
-| `#[non_null_or_empty]` | Rejects empty strings |
+| `#[non_null_or_empty]` | Rejects empty / missing values (`String`, `Option`, `Vec`, …) |
+| `#[null_or_empty]` | Requires empty / missing values (inverse of above) |
 | `#[equal(value = "...")]` | Must equal the literal |
 | `#[not_equal(value = "...")]` | Must not equal the literal |
 | `#[length(min = N, max = M)]` | Inclusive length range |
