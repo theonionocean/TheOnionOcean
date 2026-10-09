@@ -1,725 +1,725 @@
 {
-  "version": 2,
-  "entities": [
-    {
-      "kind": "event",
-      "scope": "employee_of",
-      "name": "guard_last_admin",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "c35d8802b904aede56f2cff40d6e3217e9e3bcdfe3dba4918b1319905503864b",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "event",
-      "scope": "organization",
-      "name": "setup_organization",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "bb3f1c1957384fc23efadf66d1748817dc463ff3e0b8a259d5778393b122b144",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "event",
-      "scope": "organization_invitation",
-      "name": "on_accept",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "cc6ee9df9f29cb66caf56bea2a5448568ff38ca7992df341248cc1925677ff22",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "employee_of",
-      "name": "joined_at",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "898b082a23a74e780d3edb47e019d8226e0de4eab20efcf280a08b3067b6d0bf",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "field",
-      "scope": "employee_of",
-      "name": "role",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "9130b0e6e670fa6b799175642a35da3b98dc9980af73cf828bc1a780cc0431f4",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "field",
-      "scope": "employee_of",
-      "name": "status",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "768f1f9756d8fae58ba200341480e1ad65a075a9fcde3cd1f78e25ebc6f8d73e",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "field",
-      "scope": "employee_of",
-      "name": "title",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "8eef0436ce34f93f372cad3d07ff4e2eea69a7d156b452e0c9a51200044b9400",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "field",
-      "scope": "member_of",
-      "name": "joined_at",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "42dcc3417209976854706033076f25a53148d0ca9008d38e708d59e366cfd10f",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "field",
-      "scope": "member_of",
-      "name": "role",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "19dd1721783f6b589b91225243b2011ea338103cd98c02219992d0c09604cde7",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "created_at",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "b18e12d9231047b10daa07dd7165fbe86a5f37c3182f5b58434e8d68c88eaade",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "legal_name",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "4d1883cf834000c0b7d2d73dc43a16144339f300549ed6cf0917d695c1172e15",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "logo",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "f22252771c5e40ca2dc91c7d2f7ced58f0ee9bbff53e9dc8ce0f1227f3729176",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "name",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "49dd10468270771409caec0fd9a512979cee60cee520a545b2722796df352401",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "owner",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "0c59052e8432d88982c534e15769108ee500dc9fe57c3c41897b3f84cd48e42e",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "slug",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "7f13003e290935f10dbd7a3f02283d74406f6f510ccf8d9c8e893649343bb404",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "field",
-      "scope": "organization",
-      "name": "teams",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "11983e315972cdcadf2e13b211df8f084a1ec6d84495e0238b80cab62805e15e",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "created_by",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "58b9b6e3cc7771f942abf9dc26fd9623f28ece1d5303b818b71eb547a5fa3e36",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "email",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "dcc7803bf3d3540e7716fb6408c037eec989e0c2af06e77015a9138fc5d837d9",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "expires",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "a7ccbe09cb6f31ba4bda0c200ad3db1b6d79cb3133deedb5a9141acc5cdaa7bc",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "organization_role",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "04741b55f6a7f7e8c06ae0bea836f4fb5fac6c1e915c26584d6ed309e1a46a1d",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "teams",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "2c9a44eeb111ee8d3ce5c7ba141dad69409f0a1562a60cfd7f22ac521b8437ea",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "token",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "b1a796e50a7b8e57c0ab7c3714de8083ad563e4a749c7cd8e13ee84018da0433",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "used_at",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "b2aa92651c51e39d44c4eaaa9cf893aa1551be9221308525b94a4a992a4fcf2f",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_invitation",
-      "name": "used_by",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "c91b683cf123f1b0b1adb90df3466bb6d02a01a333f9c51cc455c6ed99c916c9",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_permission",
-      "name": "description",
-      "source_path": "database/schema/organization/organization_permission.surql",
-      "statement_hash": "6de24ada94911adf4618fca7d9393691e46f4e8d027561c563e104604622c066",
-      "file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_permission",
-      "name": "name",
-      "source_path": "database/schema/organization/organization_permission.surql",
-      "statement_hash": "9d0ede96154a9a92875139f5fa4098308ea9706b53d59f33a26465a7c8d701db",
-      "file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "created_by",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "50a94793949cddd3c3b9c9d7e81900c7e034193a81771c35fd917fcb7e17e9a5",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "description",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "a433bbb6669a22e8a57501e3f316dea243fccf5c244f4b63908a0307426b0080",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "kind",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "d8e8d5ab2905b53f192b6757666ef87006a04e7b932155e9c0a3b1952e9f0a6b",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "name",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "6f4571d2af4f79d1e685525d566925906bf3fb279d605543de8f04a0bac722bf",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "organization",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "7cbb903abca731b9cf1ff92fcea734297de852a09b8aa1e7fe06a135c4b6651a",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "permissions",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "898e0be9ed0fe1b80e1b9f5239d1fb9f212166850e52e77f6ef78623130294d6",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "organization_role",
-      "name": "sort_order",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "42bfdf785d278ff7fba2b6eaaff2e5844d7b940ef209cfd75d279315c075eccb",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "created_at",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "c52140713bb193ba1bc1869053a341bf422d468332e1480554e4b756ba74b523",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "created_by",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "6758c867cb6747f0ec2f1a5e10cdc1f8a3db521aa3b7ee019eb424de19ec6925",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "description",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "26b50eb512b2dcf3b56b653346ef325a0dba1639a5e165c134264f46f79772dd",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "modified_by",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "eedac05f857415b1ca232c772d3653ac8397e73d2b8cc607857b7a270f8180f6",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "name",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "8871c4cd965c9cf4399e229402478d314af58caf6e6e30f87b83488956911857",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "slug",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "f4df557445178b91b613c4036fed31877606cfcf3b708ba6f6ea45e4c1dc4892",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "project",
-      "name": "updated_at",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "16a5266bea4603140ad95c159f1e6875cff08637fd7af16db75415d9bf1e415d",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "assigned_to",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "dd2241ecbed73fb8b340cb1338ac31583e9ffa9148aa34bb379506c0b3118ca7",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "created_at",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "d0bc38d6588a43da2779a2d370e385f32215fa34350f9b947aa44a31fdeebcbe",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "created_by",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "70f6f33c02a053af4a84de7a7bbaec77a434a2b8852d0434b6234de936dfbd1a",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "description",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "357006db6eff00c55a495c619c219b0cf0290c651c42c3839de16d582028b126",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "modified_by",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "919846e221767c0c9e6ab4459d1ce68157bb2e8aa4071e7cb048ccc017684769",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "status",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "6d4b2bd69f8895547c2d8f97bf5cf3fbd235a4e9030df332b701deb3cfb8439c",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "title",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "3e9c557ccfeee9c76f540b8aad394493bc8746c87eba4f38baffd2bb6649a601",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "task",
-      "name": "updated_at",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "2dded4cf34ba0b445807e2fe8e8e3f9f241841a918131fc125a158138860d799",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "field",
-      "scope": "team",
-      "name": "created_at",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "1ed5bc88c9169b936777bfec500a9bd2fcdcfd6ab34e1cc6596629f0bf248548",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "field",
-      "scope": "team",
-      "name": "name",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "49abb3da1e7ba4e688a5de655feb4a9f255aca8a322e9dc7b064313df893ab71",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "field",
-      "scope": "team",
-      "name": "organization",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "48a5d36f4adef262d3b317694a5433bd8db769548cc82c99f84cd1ecb72da373",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "field",
-      "scope": "team",
-      "name": "parent",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "81b8c33c94869f728b25ca147ee081e0fe92b3d76cfa4b0178a506bd364804c7",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "field",
-      "scope": "user",
-      "name": "created_at",
-      "source_path": "database/schema/user.surql",
-      "statement_hash": "65deb63cbc68d4035df3dffef087eeab7f59718ca0d7933fac493568d82671ea",
-      "file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
-    },
-    {
-      "kind": "field",
-      "scope": "user",
-      "name": "email",
-      "source_path": "database/schema/user.surql",
-      "statement_hash": "78450b83f64872dcfcab0f6874752d989792e4c661b06418c37a336c235668c3",
-      "file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
-    },
-    {
-      "kind": "field",
-      "scope": "user",
-      "name": "name",
-      "source_path": "database/schema/user.surql",
-      "statement_hash": "e9e44f8cc486043c11b12cb4be179c18a98f991280bc3c37bd1a751c8dc98c41",
-      "file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::account::organization::teams",
-      "source_path": "database/schema/organization/functions.surql",
-      "statement_hash": "a6c870d3465b427177d8988be773e61f5c5d396dd38b6018e665130542fcc9a1",
-      "file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::account::organization::teams",
-      "source_path": "database/schema/team/functions.surql",
-      "statement_hash": "c848e44f9dbc788b6c0ba7301383438b269d2b7ae1fe3c8a9c304735b875dc7b",
-      "file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::account::organization::unit",
-      "source_path": "database/schema/organization/functions.surql",
-      "statement_hash": "485642300cf95cda748045d8ff7c41cb0f4e160f66500158ee229263d8ccad06",
-      "file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::organization::employee",
-      "source_path": "database/schema/organization/functions.surql",
-      "statement_hash": "e90b6b6b1cef781fbb5b77ed9b3a521060c14aeb25b36fce43516b3f7c9871a3",
-      "file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::organization::permissible",
-      "source_path": "database/schema/organization/functions.surql",
-      "statement_hash": "4da43e8f93406d7a8d163e2c889a94ccd6886b22f1bc7a0c6ea5b13cc6dc2e67",
-      "file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::organization::role::contains",
-      "source_path": "database/schema/organization/functions.surql",
-      "statement_hash": "75ed824d18934955b8538fdf4708bccedf68148153108f1d920e823aea162b72",
-      "file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::team::get_role",
-      "source_path": "database/schema/team/functions.surql",
-      "statement_hash": "1ebb0ebcf7a97e95e8b9a16eb797b9e4428928cbb10f69c55bbbb034357e639a",
-      "file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::team::member_of",
-      "source_path": "database/schema/team/functions.surql",
-      "statement_hash": "ede4902395065fe0c06d85d42e9f3bc9a2c76f9729a169baa020377d55485520",
-      "file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
-    },
-    {
-      "kind": "function",
-      "scope": null,
-      "name": "fn::team::members",
-      "source_path": "database/schema/team/functions.surql",
-      "statement_hash": "dfa676dc1fefa81c58fef2d45c34fa7c84c14bd05b33a4f837f8570b3a68b442",
-      "file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
-    },
-    {
-      "kind": "index",
-      "scope": "employee_of",
-      "name": "employee_of_by_account",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "28a8febfdb5d365276004a4b78f560856ac8a7a3d44d6b8dd324d1e076b2705b",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "index",
-      "scope": "employee_of",
-      "name": "employee_of_by_organization",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "a548858c1a5c5887e095b4c1991a4e688e8f9bc49afb4a8b2eac82449ad93b07",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "index",
-      "scope": "employee_of",
-      "name": "employee_of_unique",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "770a018b314324655728b915971d82ffcd90096fb138fb8daeec74f40cfe316a",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "index",
-      "scope": "member_of",
-      "name": "member_of_by_employee",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "90e40d965fa97374499fbf011f0c6f1dd8e02e6f3f1763604e1f3149ad509fe6",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "index",
-      "scope": "member_of",
-      "name": "member_of_by_team",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "7862a5059a3b88eea00669dc8e366aeee072e146e4b3992ab9cb686a73849f7c",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "index",
-      "scope": "member_of",
-      "name": "member_of_unique",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "b70f0d1d06f1060b7f00fb74cf9f81af156024689a038fb23b00f025c58b180d",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "index",
-      "scope": "organization",
-      "name": "organization_slug_unique",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "5c311e0d810f390d39d135dbe0aec2d3e59d5395011b0e88080170658dcd4cb9",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "index",
-      "scope": "organization_invitation",
-      "name": "organization_invitation_token",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "515572fdd257dd002c9206a4d114441b3aae3ba95c97e19c982e81aa1e8dc14b",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "index",
-      "scope": "organization_invitation",
-      "name": "organization_invitation_unique",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "1fad4c16e059ae277f5ce09f040e95addd318ba7e774bc7a33c05f4660b84dff",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "index",
-      "scope": "organization_permission",
-      "name": "organization_permission_name",
-      "source_path": "database/schema/organization/organization_permission.surql",
-      "statement_hash": "c119707f6051418031d852b98bd88125dd3b5157695dffe4640ccddf9d26ea8b",
-      "file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
-    },
-    {
-      "kind": "index",
-      "scope": "organization_role",
-      "name": "organization_role_unique",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "679c799aef15a8590075b535620fa95703fc2cb1165b5eb34f52a6bfed581b12",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "index",
-      "scope": "project",
-      "name": "idx_name",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "21eb2675420f6cd76c0938b58a83fa6d440b7fc1031c1f10de8ed7172d1b77c7",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "index",
-      "scope": "project",
-      "name": "idx_slug",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "9a75f075f70df2af297bb08b441ee33634ce25871c18fa20550b4d57111187aa",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "index",
-      "scope": "task",
-      "name": "idx_title",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "ef9114c73857351cfe9156d30650b571a1ed4f7920cdd14f29613aa1bf776ed3",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "index",
-      "scope": "team",
-      "name": "team_org_name_unique",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "f3e0425d74cd44fe1d8a6c542fa3fde5bdc4eecce09492512ca81352310518c9",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "index",
-      "scope": "user",
-      "name": "user_email_unique",
-      "source_path": "database/schema/user.surql",
-      "statement_hash": "0a95b490ac96c1779cd7286c1b0c6c6880c648ee322772c32db076e798394bd1",
-      "file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "employee_of",
-      "source_path": "database/schema/organization/employee_of.surql",
-      "statement_hash": "15b1be2efcdf84e996f91c2891e24bf6001d71060ce9999d9a6d687cce1a62d4",
-      "file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "member_of",
-      "source_path": "database/schema/team/member_of.surql",
-      "statement_hash": "21cd3a5c3b92ad552c88d88ed51cc3c17cde5163841bf1a7b5fa1820baeb4f12",
-      "file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "organization",
-      "source_path": "database/schema/organization/organization.surql",
-      "statement_hash": "9979cdcbe22107220c116c951181c2eaf76b79b5fb36bdbf4c54f3fc72f004f5",
-      "file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "organization_invitation",
-      "source_path": "database/schema/organization/organization_invitation.surql",
-      "statement_hash": "c003d66032ccd2280ca0d9087b8fb17b737d1aea2eff21d6576f5e7901af869d",
-      "file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "organization_permission",
-      "source_path": "database/schema/organization/organization_permission.surql",
-      "statement_hash": "471ae098d4fd60eae1ab63702476ff5295c270f42b870de8d54479d84614d9fa",
-      "file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "organization_role",
-      "source_path": "database/schema/organization/organization_role.surql",
-      "statement_hash": "38be192a75be15cbe24f7da0fa7e165ba424b5716818076408b2dac3cf2cd9fe",
-      "file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "project",
-      "source_path": "database/schema/board/project.surql",
-      "statement_hash": "c4285033ccf96295852ae7cdb0d305673d74a879f12022a1d54be0dafd075651",
-      "file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "task",
-      "source_path": "database/schema/board/task.surql",
-      "statement_hash": "aa668e0f58efdc54f480a034a147f3fb2126e826e2c2b808c79dda89716307b7",
-      "file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "team",
-      "source_path": "database/schema/team/team.surql",
-      "statement_hash": "75a8c3424eab8cd3808bda42dd64bb17f353436259989ced9578c2d62bcfde2f",
-      "file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
-    },
-    {
-      "kind": "table",
-      "scope": null,
-      "name": "user",
-      "source_path": "database/schema/user.surql",
-      "statement_hash": "a356a0e3a79e87f0beb116d1fd74d223e0c0c257721f9ba3e2a8061774d4fb28",
-      "file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
-    }
-  ]
+	"version": 2,
+	"entities": [
+		{
+			"kind": "event",
+			"scope": "employee_of",
+			"name": "guard_last_admin",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "c35d8802b904aede56f2cff40d6e3217e9e3bcdfe3dba4918b1319905503864b",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "event",
+			"scope": "organization",
+			"name": "setup_organization",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "bb3f1c1957384fc23efadf66d1748817dc463ff3e0b8a259d5778393b122b144",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "event",
+			"scope": "organization_invitation",
+			"name": "on_accept",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "cc6ee9df9f29cb66caf56bea2a5448568ff38ca7992df341248cc1925677ff22",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "employee_of",
+			"name": "joined_at",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "898b082a23a74e780d3edb47e019d8226e0de4eab20efcf280a08b3067b6d0bf",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "field",
+			"scope": "employee_of",
+			"name": "role",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "9130b0e6e670fa6b799175642a35da3b98dc9980af73cf828bc1a780cc0431f4",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "field",
+			"scope": "employee_of",
+			"name": "status",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "768f1f9756d8fae58ba200341480e1ad65a075a9fcde3cd1f78e25ebc6f8d73e",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "field",
+			"scope": "employee_of",
+			"name": "title",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "8eef0436ce34f93f372cad3d07ff4e2eea69a7d156b452e0c9a51200044b9400",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "field",
+			"scope": "member_of",
+			"name": "joined_at",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "42dcc3417209976854706033076f25a53148d0ca9008d38e708d59e366cfd10f",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "field",
+			"scope": "member_of",
+			"name": "role",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "19dd1721783f6b589b91225243b2011ea338103cd98c02219992d0c09604cde7",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "created_at",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "b18e12d9231047b10daa07dd7165fbe86a5f37c3182f5b58434e8d68c88eaade",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "legal_name",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "4d1883cf834000c0b7d2d73dc43a16144339f300549ed6cf0917d695c1172e15",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "logo",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "f22252771c5e40ca2dc91c7d2f7ced58f0ee9bbff53e9dc8ce0f1227f3729176",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "name",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "49dd10468270771409caec0fd9a512979cee60cee520a545b2722796df352401",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "owner",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "0c59052e8432d88982c534e15769108ee500dc9fe57c3c41897b3f84cd48e42e",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "slug",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "7f13003e290935f10dbd7a3f02283d74406f6f510ccf8d9c8e893649343bb404",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "field",
+			"scope": "organization",
+			"name": "teams",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "11983e315972cdcadf2e13b211df8f084a1ec6d84495e0238b80cab62805e15e",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "created_by",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "58b9b6e3cc7771f942abf9dc26fd9623f28ece1d5303b818b71eb547a5fa3e36",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "email",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "dcc7803bf3d3540e7716fb6408c037eec989e0c2af06e77015a9138fc5d837d9",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "expires",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "a7ccbe09cb6f31ba4bda0c200ad3db1b6d79cb3133deedb5a9141acc5cdaa7bc",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "organization_role",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "04741b55f6a7f7e8c06ae0bea836f4fb5fac6c1e915c26584d6ed309e1a46a1d",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "teams",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "2c9a44eeb111ee8d3ce5c7ba141dad69409f0a1562a60cfd7f22ac521b8437ea",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "token",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "b1a796e50a7b8e57c0ab7c3714de8083ad563e4a749c7cd8e13ee84018da0433",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "used_at",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "b2aa92651c51e39d44c4eaaa9cf893aa1551be9221308525b94a4a992a4fcf2f",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_invitation",
+			"name": "used_by",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "c91b683cf123f1b0b1adb90df3466bb6d02a01a333f9c51cc455c6ed99c916c9",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_permission",
+			"name": "description",
+			"source_path": "database/schema/organization/organization_permission.surql",
+			"statement_hash": "6de24ada94911adf4618fca7d9393691e46f4e8d027561c563e104604622c066",
+			"file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_permission",
+			"name": "name",
+			"source_path": "database/schema/organization/organization_permission.surql",
+			"statement_hash": "9d0ede96154a9a92875139f5fa4098308ea9706b53d59f33a26465a7c8d701db",
+			"file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "created_by",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "50a94793949cddd3c3b9c9d7e81900c7e034193a81771c35fd917fcb7e17e9a5",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "description",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "a433bbb6669a22e8a57501e3f316dea243fccf5c244f4b63908a0307426b0080",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "kind",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "d8e8d5ab2905b53f192b6757666ef87006a04e7b932155e9c0a3b1952e9f0a6b",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "name",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "6f4571d2af4f79d1e685525d566925906bf3fb279d605543de8f04a0bac722bf",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "organization",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "7cbb903abca731b9cf1ff92fcea734297de852a09b8aa1e7fe06a135c4b6651a",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "permissions",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "898e0be9ed0fe1b80e1b9f5239d1fb9f212166850e52e77f6ef78623130294d6",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "organization_role",
+			"name": "sort_order",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "42bfdf785d278ff7fba2b6eaaff2e5844d7b940ef209cfd75d279315c075eccb",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "created_at",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "c52140713bb193ba1bc1869053a341bf422d468332e1480554e4b756ba74b523",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "created_by",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "6758c867cb6747f0ec2f1a5e10cdc1f8a3db521aa3b7ee019eb424de19ec6925",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "description",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "26b50eb512b2dcf3b56b653346ef325a0dba1639a5e165c134264f46f79772dd",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "modified_by",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "eedac05f857415b1ca232c772d3653ac8397e73d2b8cc607857b7a270f8180f6",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "name",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "8871c4cd965c9cf4399e229402478d314af58caf6e6e30f87b83488956911857",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "slug",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "f4df557445178b91b613c4036fed31877606cfcf3b708ba6f6ea45e4c1dc4892",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "project",
+			"name": "updated_at",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "16a5266bea4603140ad95c159f1e6875cff08637fd7af16db75415d9bf1e415d",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "assigned_to",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "dd2241ecbed73fb8b340cb1338ac31583e9ffa9148aa34bb379506c0b3118ca7",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "created_at",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "d0bc38d6588a43da2779a2d370e385f32215fa34350f9b947aa44a31fdeebcbe",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "created_by",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "70f6f33c02a053af4a84de7a7bbaec77a434a2b8852d0434b6234de936dfbd1a",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "description",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "357006db6eff00c55a495c619c219b0cf0290c651c42c3839de16d582028b126",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "modified_by",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "919846e221767c0c9e6ab4459d1ce68157bb2e8aa4071e7cb048ccc017684769",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "status",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "6d4b2bd69f8895547c2d8f97bf5cf3fbd235a4e9030df332b701deb3cfb8439c",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "title",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "3e9c557ccfeee9c76f540b8aad394493bc8746c87eba4f38baffd2bb6649a601",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "task",
+			"name": "updated_at",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "2dded4cf34ba0b445807e2fe8e8e3f9f241841a918131fc125a158138860d799",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "field",
+			"scope": "team",
+			"name": "created_at",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "1ed5bc88c9169b936777bfec500a9bd2fcdcfd6ab34e1cc6596629f0bf248548",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "field",
+			"scope": "team",
+			"name": "name",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "49abb3da1e7ba4e688a5de655feb4a9f255aca8a322e9dc7b064313df893ab71",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "field",
+			"scope": "team",
+			"name": "organization",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "48a5d36f4adef262d3b317694a5433bd8db769548cc82c99f84cd1ecb72da373",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "field",
+			"scope": "team",
+			"name": "parent",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "81b8c33c94869f728b25ca147ee081e0fe92b3d76cfa4b0178a506bd364804c7",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "field",
+			"scope": "user",
+			"name": "created_at",
+			"source_path": "database/schema/user.surql",
+			"statement_hash": "65deb63cbc68d4035df3dffef087eeab7f59718ca0d7933fac493568d82671ea",
+			"file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
+		},
+		{
+			"kind": "field",
+			"scope": "user",
+			"name": "email",
+			"source_path": "database/schema/user.surql",
+			"statement_hash": "78450b83f64872dcfcab0f6874752d989792e4c661b06418c37a336c235668c3",
+			"file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
+		},
+		{
+			"kind": "field",
+			"scope": "user",
+			"name": "name",
+			"source_path": "database/schema/user.surql",
+			"statement_hash": "e9e44f8cc486043c11b12cb4be179c18a98f991280bc3c37bd1a751c8dc98c41",
+			"file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::account::organization::teams",
+			"source_path": "database/schema/organization/functions.surql",
+			"statement_hash": "a6c870d3465b427177d8988be773e61f5c5d396dd38b6018e665130542fcc9a1",
+			"file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::account::organization::teams",
+			"source_path": "database/schema/team/functions.surql",
+			"statement_hash": "c848e44f9dbc788b6c0ba7301383438b269d2b7ae1fe3c8a9c304735b875dc7b",
+			"file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::account::organization::unit",
+			"source_path": "database/schema/organization/functions.surql",
+			"statement_hash": "485642300cf95cda748045d8ff7c41cb0f4e160f66500158ee229263d8ccad06",
+			"file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::organization::employee",
+			"source_path": "database/schema/organization/functions.surql",
+			"statement_hash": "e90b6b6b1cef781fbb5b77ed9b3a521060c14aeb25b36fce43516b3f7c9871a3",
+			"file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::organization::permissible",
+			"source_path": "database/schema/organization/functions.surql",
+			"statement_hash": "4da43e8f93406d7a8d163e2c889a94ccd6886b22f1bc7a0c6ea5b13cc6dc2e67",
+			"file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::organization::role::contains",
+			"source_path": "database/schema/organization/functions.surql",
+			"statement_hash": "75ed824d18934955b8538fdf4708bccedf68148153108f1d920e823aea162b72",
+			"file_hash": "15bbdc0eeaccd4318bfed4dd2d2ce36620ca62a48e6a8738250a32959886c397"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::team::get_role",
+			"source_path": "database/schema/team/functions.surql",
+			"statement_hash": "1ebb0ebcf7a97e95e8b9a16eb797b9e4428928cbb10f69c55bbbb034357e639a",
+			"file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::team::member_of",
+			"source_path": "database/schema/team/functions.surql",
+			"statement_hash": "ede4902395065fe0c06d85d42e9f3bc9a2c76f9729a169baa020377d55485520",
+			"file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
+		},
+		{
+			"kind": "function",
+			"scope": null,
+			"name": "fn::team::members",
+			"source_path": "database/schema/team/functions.surql",
+			"statement_hash": "dfa676dc1fefa81c58fef2d45c34fa7c84c14bd05b33a4f837f8570b3a68b442",
+			"file_hash": "e8e95184c579515513ff49b6683c99b2c2ee55aad172b36c6df6e8203ff91e64"
+		},
+		{
+			"kind": "index",
+			"scope": "employee_of",
+			"name": "employee_of_by_account",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "28a8febfdb5d365276004a4b78f560856ac8a7a3d44d6b8dd324d1e076b2705b",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "index",
+			"scope": "employee_of",
+			"name": "employee_of_by_organization",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "a548858c1a5c5887e095b4c1991a4e688e8f9bc49afb4a8b2eac82449ad93b07",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "index",
+			"scope": "employee_of",
+			"name": "employee_of_unique",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "770a018b314324655728b915971d82ffcd90096fb138fb8daeec74f40cfe316a",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "index",
+			"scope": "member_of",
+			"name": "member_of_by_employee",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "90e40d965fa97374499fbf011f0c6f1dd8e02e6f3f1763604e1f3149ad509fe6",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "index",
+			"scope": "member_of",
+			"name": "member_of_by_team",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "7862a5059a3b88eea00669dc8e366aeee072e146e4b3992ab9cb686a73849f7c",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "index",
+			"scope": "member_of",
+			"name": "member_of_unique",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "b70f0d1d06f1060b7f00fb74cf9f81af156024689a038fb23b00f025c58b180d",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "index",
+			"scope": "organization",
+			"name": "organization_slug_unique",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "5c311e0d810f390d39d135dbe0aec2d3e59d5395011b0e88080170658dcd4cb9",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "index",
+			"scope": "organization_invitation",
+			"name": "organization_invitation_token",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "515572fdd257dd002c9206a4d114441b3aae3ba95c97e19c982e81aa1e8dc14b",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "index",
+			"scope": "organization_invitation",
+			"name": "organization_invitation_unique",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "1fad4c16e059ae277f5ce09f040e95addd318ba7e774bc7a33c05f4660b84dff",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "index",
+			"scope": "organization_permission",
+			"name": "organization_permission_name",
+			"source_path": "database/schema/organization/organization_permission.surql",
+			"statement_hash": "c119707f6051418031d852b98bd88125dd3b5157695dffe4640ccddf9d26ea8b",
+			"file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
+		},
+		{
+			"kind": "index",
+			"scope": "organization_role",
+			"name": "organization_role_unique",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "679c799aef15a8590075b535620fa95703fc2cb1165b5eb34f52a6bfed581b12",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "index",
+			"scope": "project",
+			"name": "idx_name",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "21eb2675420f6cd76c0938b58a83fa6d440b7fc1031c1f10de8ed7172d1b77c7",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "index",
+			"scope": "project",
+			"name": "idx_slug",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "9a75f075f70df2af297bb08b441ee33634ce25871c18fa20550b4d57111187aa",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "index",
+			"scope": "task",
+			"name": "idx_title",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "ef9114c73857351cfe9156d30650b571a1ed4f7920cdd14f29613aa1bf776ed3",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "index",
+			"scope": "team",
+			"name": "team_org_name_unique",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "f3e0425d74cd44fe1d8a6c542fa3fde5bdc4eecce09492512ca81352310518c9",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "index",
+			"scope": "user",
+			"name": "user_email_unique",
+			"source_path": "database/schema/user.surql",
+			"statement_hash": "0a95b490ac96c1779cd7286c1b0c6c6880c648ee322772c32db076e798394bd1",
+			"file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "employee_of",
+			"source_path": "database/schema/organization/employee_of.surql",
+			"statement_hash": "15b1be2efcdf84e996f91c2891e24bf6001d71060ce9999d9a6d687cce1a62d4",
+			"file_hash": "fecebe2d1876b0c7a566401eb6603fabaccff0cbbb2ffbd1d9f4ad32173b3d23"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "member_of",
+			"source_path": "database/schema/team/member_of.surql",
+			"statement_hash": "21cd3a5c3b92ad552c88d88ed51cc3c17cde5163841bf1a7b5fa1820baeb4f12",
+			"file_hash": "5a35ae58112b4c347be254afbd1108b153f92450baa73166467af6dba24c796a"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "organization",
+			"source_path": "database/schema/organization/organization.surql",
+			"statement_hash": "9979cdcbe22107220c116c951181c2eaf76b79b5fb36bdbf4c54f3fc72f004f5",
+			"file_hash": "873fe6a403c31be982f06a61ac17a9f269e0c76a484bd9422fc2a536350dc6d6"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "organization_invitation",
+			"source_path": "database/schema/organization/organization_invitation.surql",
+			"statement_hash": "c003d66032ccd2280ca0d9087b8fb17b737d1aea2eff21d6576f5e7901af869d",
+			"file_hash": "3fcaf3d43fdbf5f6cc7d21d5cf1bf6080e8cbf4de8201b894cd5ee49dbb0d009"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "organization_permission",
+			"source_path": "database/schema/organization/organization_permission.surql",
+			"statement_hash": "471ae098d4fd60eae1ab63702476ff5295c270f42b870de8d54479d84614d9fa",
+			"file_hash": "c056065aa1a79960cad050d5058e24423301eb1377c7a10c7cd2de74c1a6ce7a"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "organization_role",
+			"source_path": "database/schema/organization/organization_role.surql",
+			"statement_hash": "38be192a75be15cbe24f7da0fa7e165ba424b5716818076408b2dac3cf2cd9fe",
+			"file_hash": "410734b6bd9d4e5360e8efffde030dbfb3daf6283cccddd4e754f17f58a7bad2"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "project",
+			"source_path": "database/schema/board/project.surql",
+			"statement_hash": "c4285033ccf96295852ae7cdb0d305673d74a879f12022a1d54be0dafd075651",
+			"file_hash": "488f8f8ec857d7aa4ee5e979b0c5495955a4a68294431b34ea93d0347803e646"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "task",
+			"source_path": "database/schema/board/task.surql",
+			"statement_hash": "aa668e0f58efdc54f480a034a147f3fb2126e826e2c2b808c79dda89716307b7",
+			"file_hash": "e8388b9eebe3bdfe626eb7bb43582986d66684bbc32ef7176a7c57fdefcfd978"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "team",
+			"source_path": "database/schema/team/team.surql",
+			"statement_hash": "75a8c3424eab8cd3808bda42dd64bb17f353436259989ced9578c2d62bcfde2f",
+			"file_hash": "d14712208e5dffe2310ae0c9cdfc8d09937536bbf61877fa823d057897d79d2c"
+		},
+		{
+			"kind": "table",
+			"scope": null,
+			"name": "user",
+			"source_path": "database/schema/user.surql",
+			"statement_hash": "a356a0e3a79e87f0beb116d1fd74d223e0c0c257721f9ba3e2a8061774d4fb28",
+			"file_hash": "0b953742ec57e9e309ca26754fbb77e16b98beb6135aead9cb03e93a2a9727f7"
+		}
+	]
 }
