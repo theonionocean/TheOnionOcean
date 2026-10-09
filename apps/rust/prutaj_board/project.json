@@ -1,70 +1,70 @@
 {
-  "name": "prutaj_board",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "./apps/rust/prutaj_board/src",
-  "tags": ["type:app", "lang:rust"],
-  "targets": {
-    "build": {
-      "cache": true,
-      "executor": "@monodon/rust:build",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/prutaj_board"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
-    },
-    "test": {
-      "cache": true,
-      "executor": "@monodon/rust:test",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/prutaj_board"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
-    },
-    "lint": {
-      "cache": true,
-      "executor": "@monodon/rust:lint",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/prutaj_board"
-      }
-    },
-    "run": {
-      "executor": "@monodon/rust:run",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/prutaj_board"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
-    },
-    "serve": {
-      "continuous": true,
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "watchexec --restart --exts rs,toml --watch apps/rust/prutaj_board --watch lib/rust -- cargo run -p prutaj_board --target-dir dist/target/prutaj_board"
-      }
-    },
-    "generate-openapi": {
-      "executor": "@monodon/rust:run",
-      "outputs": ["{options.target-dir}", "{projectRoot}/specification.yml"],
-      "options": {
-        "target-dir": "dist/target/prutaj_board",
-        "bin": "generate_openapi"
-      }
-    }
-  }
+	"name": "prutaj_board",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "application",
+	"sourceRoot": "./apps/rust/prutaj_board/src",
+	"tags": ["type:app", "lang:rust"],
+	"targets": {
+		"build": {
+			"cache": true,
+			"executor": "@monodon/rust:build",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/prutaj_board"
+			},
+			"configurations": {
+				"production": {
+					"release": true
+				}
+			}
+		},
+		"test": {
+			"cache": true,
+			"executor": "@monodon/rust:test",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/prutaj_board"
+			},
+			"configurations": {
+				"production": {
+					"release": true
+				}
+			}
+		},
+		"lint": {
+			"cache": true,
+			"executor": "@monodon/rust:lint",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/prutaj_board"
+			}
+		},
+		"run": {
+			"executor": "@monodon/rust:run",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/prutaj_board"
+			},
+			"configurations": {
+				"production": {
+					"release": true
+				}
+			}
+		},
+		"serve": {
+			"continuous": true,
+			"executor": "nx:run-commands",
+			"options": {
+				"command": "watchexec --restart --exts rs,toml --watch apps/rust/prutaj_board --watch lib/rust -- cargo run -p prutaj_board --target-dir dist/target/prutaj_board"
+			}
+		},
+		"generate-openapi": {
+			"executor": "@monodon/rust:run",
+			"outputs": ["{options.target-dir}", "{projectRoot}/specification.yml"],
+			"options": {
+				"target-dir": "dist/target/prutaj_board",
+				"bin": "generate_openapi"
+			}
+		}
+	}
 }

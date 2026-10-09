@@ -1,46 +1,37 @@
 {
-  "name": "macros_derive",
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "./lib/rust/macros/derive/macros_derive/src",
-  "tags": [
-    "type:lib",
-    "lang:rust"
-  ],
-  "targets": {
-    "build": {
-      "executor": "@monodon/rust:check",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/macros_derive"
-      }
-    },
-    "test": {
-      "cache": true,
-      "executor": "@monodon/rust:test",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/macros_derive"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
-    },
-    "lint": {
-      "cache": true,
-      "executor": "@monodon/rust:lint",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/macros_derive"
-      }
-    }
-  }
+	"name": "macros_derive",
+	"$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "library",
+	"sourceRoot": "./lib/rust/macros/derive/macros_derive/src",
+	"tags": ["type:lib", "lang:rust"],
+	"targets": {
+		"build": {
+			"executor": "@monodon/rust:check",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/macros_derive"
+			}
+		},
+		"test": {
+			"cache": true,
+			"executor": "@monodon/rust:test",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/macros_derive"
+			},
+			"configurations": {
+				"production": {
+					"release": true
+				}
+			}
+		},
+		"lint": {
+			"cache": true,
+			"executor": "@monodon/rust:lint",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/macros_derive"
+			}
+		}
+	}
 }

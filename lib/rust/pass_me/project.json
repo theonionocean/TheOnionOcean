@@ -1,37 +1,37 @@
 {
-  "name": "pass_me",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "./lib/rust/pass_me/src",
-  "tags": ["type:lib", "lang:rust"],
-  "targets": {
-    "build": {
-      "executor": "@monodon/rust:check",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/pass_me"
-      }
-    },
-    "test": {
-      "cache": true,
-      "executor": "@monodon/rust:test",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/pass_me"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
-    },
-    "lint": {
-      "cache": true,
-      "executor": "@monodon/rust:lint",
-      "outputs": ["{options.target-dir}"],
-      "options": {
-        "target-dir": "dist/target/pass_me"
-      }
-    }
-  }
+	"name": "pass_me",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "library",
+	"sourceRoot": "./lib/rust/pass_me/src",
+	"tags": ["type:lib", "lang:rust"],
+	"targets": {
+		"build": {
+			"executor": "@monodon/rust:check",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/pass_me"
+			}
+		},
+		"test": {
+			"cache": true,
+			"executor": "@monodon/rust:test",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/pass_me"
+			},
+			"configurations": {
+				"production": {
+					"release": true
+				}
+			}
+		},
+		"lint": {
+			"cache": true,
+			"executor": "@monodon/rust:lint",
+			"outputs": ["{options.target-dir}"],
+			"options": {
+				"target-dir": "dist/target/pass_me"
+			}
+		}
+	}
 }
