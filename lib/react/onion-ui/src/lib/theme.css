@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 @custom-variant dark (
 	&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *)
 );
@@ -6,6 +8,11 @@
  * Role scales
  * ------------------------------------------------------------------------- */
 @theme static {
+	--font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+	--font-mono:
+		"Victor Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+		Consolas, monospace;
+
 	/* brand — primary actions, focus, brand surfaces */
 	--color-brand-50: oklch(0.975 0.015 268);
 	--color-brand-100: oklch(0.945 0.032 268);
@@ -299,6 +306,14 @@
 	html {
 		background-color: var(--background);
 		color: var(--foreground);
+		font-family: var(--font-sans);
+	}
+
+	code,
+	kbd,
+	pre,
+	samp {
+		font-family: var(--font-mono);
 	}
 
 	::selection {
