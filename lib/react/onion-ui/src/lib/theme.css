@@ -1,0 +1,288 @@
+@custom-variant dark (
+	&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *)
+);
+
+/* ---------------------------------------------------------------------------
+ * Role scales
+ * ------------------------------------------------------------------------- */
+@theme static {
+	/* brand — primary actions, focus, brand surfaces */
+	--color-brand-50: oklch(0.975 0.015 268);
+	--color-brand-100: oklch(0.945 0.032 268);
+	--color-brand-200: oklch(0.89 0.065 268);
+	--color-brand-300: oklch(0.81 0.11 268);
+	--color-brand-400: oklch(0.72 0.15 268);
+	--color-brand-500: oklch(0.62 0.19 268);
+	--color-brand-600: oklch(0.53 0.22 268);
+	--color-brand-700: oklch(0.46 0.21 268);
+	--color-brand-800: oklch(0.38 0.17 268);
+	--color-brand-900: oklch(0.31 0.13 268);
+	--color-brand-950: oklch(0.23 0.09 268);
+
+	/* secondary — secondary / quieter filled controls */
+	--color-secondary-50: oklch(0.975 0.006 262);
+	--color-secondary-100: oklch(0.945 0.012 262);
+	--color-secondary-200: oklch(0.89 0.022 262);
+	--color-secondary-300: oklch(0.81 0.035 262);
+	--color-secondary-400: oklch(0.71 0.045 262);
+	--color-secondary-500: oklch(0.6 0.052 262);
+	--color-secondary-600: oklch(0.5 0.055 262);
+	--color-secondary-700: oklch(0.43 0.052 262);
+	--color-secondary-800: oklch(0.36 0.045 262);
+	--color-secondary-900: oklch(0.29 0.036 262);
+	--color-secondary-950: oklch(0.22 0.028 262);
+
+	/* accent — accent CTAs and emphasis */
+	--color-accent-50: oklch(0.98 0.02 60);
+	--color-accent-100: oklch(0.955 0.045 58);
+	--color-accent-200: oklch(0.91 0.09 55);
+	--color-accent-300: oklch(0.85 0.13 52);
+	--color-accent-400: oklch(0.78 0.16 50);
+	--color-accent-500: oklch(0.7 0.18 48);
+	--color-accent-600: oklch(0.62 0.18 45);
+	--color-accent-700: oklch(0.54 0.16 42);
+	--color-accent-800: oklch(0.45 0.13 40);
+	--color-accent-900: oklch(0.37 0.1 38);
+	--color-accent-950: oklch(0.27 0.07 36);
+
+	/* chart — dedicated data-viz hue (scale; chart-1…5 are series tokens) */
+	--color-chart-50: oklch(0.975 0.02 192);
+	--color-chart-100: oklch(0.945 0.045 192);
+	--color-chart-200: oklch(0.9 0.08 192);
+	--color-chart-300: oklch(0.84 0.115 192);
+	--color-chart-400: oklch(0.78 0.135 192);
+	--color-chart-500: oklch(0.7 0.135 192);
+	--color-chart-600: oklch(0.6 0.12 194);
+	--color-chart-700: oklch(0.51 0.1 196);
+	--color-chart-800: oklch(0.42 0.08 198);
+	--color-chart-900: oklch(0.34 0.06 200);
+	--color-chart-950: oklch(0.25 0.045 202);
+
+	/* info — informational banners and badges (scale; `bg-info` is the semantic) */
+	--color-info-50: oklch(0.975 0.014 215);
+	--color-info-100: oklch(0.945 0.03 215);
+	--color-info-200: oklch(0.89 0.06 215);
+	--color-info-300: oklch(0.82 0.09 215);
+	--color-info-400: oklch(0.74 0.115 217);
+	--color-info-500: oklch(0.65 0.13 220);
+	--color-info-600: oklch(0.55 0.125 225);
+	--color-info-700: oklch(0.47 0.11 228);
+	--color-info-800: oklch(0.39 0.09 230);
+	--color-info-900: oklch(0.32 0.07 232);
+	--color-info-950: oklch(0.24 0.05 235);
+
+	/* neutral — surfaces, borders, body text */
+	--color-neutral-50: oklch(0.985 0.003 240);
+	--color-neutral-100: oklch(0.955 0.006 240);
+	--color-neutral-200: oklch(0.91 0.01 240);
+	--color-neutral-300: oklch(0.84 0.015 240);
+	--color-neutral-400: oklch(0.7 0.02 242);
+	--color-neutral-500: oklch(0.58 0.022 244);
+	--color-neutral-600: oklch(0.47 0.022 246);
+	--color-neutral-700: oklch(0.38 0.022 248);
+	--color-neutral-800: oklch(0.29 0.022 250);
+	--color-neutral-900: oklch(0.22 0.02 252);
+	--color-neutral-950: oklch(0.18 0.018 254);
+	--color-neutral-975: oklch(0.15 0.016 256);
+
+	/* Status scales — same names as semantic roles */
+	--color-success-400: oklch(0.76 0.14 160);
+	--color-success-600: oklch(0.52 0.12 160);
+	--color-success-950: oklch(0.22 0.04 160);
+
+	--color-warning-400: oklch(0.83 0.15 80);
+	--color-warning-600: oklch(0.78 0.16 75);
+	--color-warning-950: oklch(0.25 0.05 60);
+
+	--color-danger-400: oklch(0.72 0.16 25);
+	--color-danger-600: oklch(0.56 0.2 27);
+	--color-danger-950: oklch(0.23 0.07 27);
+}
+
+/* ---------------------------------------------------------------------------
+ * Semantic tokens — light
+ * ------------------------------------------------------------------------- */
+:root {
+	color-scheme: light;
+
+	--background: var(--color-neutral-50);
+	--foreground: var(--color-neutral-950);
+
+	--surface: oklch(1 0 0);
+	--surface-foreground: var(--color-neutral-950);
+	--popover: oklch(1 0 0);
+	--popover-foreground: var(--color-neutral-950);
+
+	--muted: var(--color-neutral-100);
+	--muted-foreground: var(--color-neutral-600);
+
+	--border: var(--color-neutral-200);
+	--border-strong: var(--color-neutral-300);
+	--input: var(--color-neutral-300);
+	--ring: var(--color-brand-500);
+
+	--primary: var(--color-brand-100);
+	--primary-hover: var(--color-brand-200);
+	--primary-foreground: var(--color-brand-900);
+
+	--secondary: var(--color-secondary-700);
+	--secondary-hover: var(--color-secondary-800);
+	--secondary-foreground: oklch(0.99 0.004 262);
+
+	--accent: var(--color-accent-500);
+	--accent-hover: var(--color-accent-400);
+	--accent-foreground: var(--color-accent-950);
+
+	--success: var(--color-success-600);
+	--success-foreground: oklch(0.99 0.005 160);
+
+	--warning: var(--color-warning-600);
+	--warning-foreground: var(--color-warning-950);
+
+	--danger: var(--color-danger-600);
+	--danger-foreground: oklch(0.99 0.005 25);
+
+	--info: var(--color-info-800);
+	--info-foreground: oklch(0.99 0.005 215);
+
+	--overlay: oklch(0.18 0.018 254 / 0.45);
+	--selection: oklch(0.81 0.11 268 / 0.4);
+
+	--chart-1: var(--color-brand-600);
+	--chart-2: var(--color-accent-500);
+	--chart-3: var(--color-success-600);
+	--chart-4: var(--color-warning-600);
+	--chart-5: var(--color-chart-500);
+}
+
+/* ---------------------------------------------------------------------------
+ * Semantic tokens — dark
+ * ------------------------------------------------------------------------- */
+.dark,
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	--background: var(--color-neutral-975);
+	--foreground: oklch(0.94 0.008 240);
+
+	--surface: var(--color-neutral-950);
+	--surface-foreground: oklch(0.94 0.008 240);
+	--popover: var(--color-neutral-900);
+	--popover-foreground: oklch(0.94 0.008 240);
+
+	--muted: var(--color-neutral-900);
+	--muted-foreground: var(--color-neutral-400);
+
+	--border: var(--color-neutral-800);
+	--border-strong: var(--color-neutral-700);
+	--input: var(--color-neutral-700);
+	--ring: var(--color-brand-400);
+
+	--primary: var(--color-brand-900);
+	--primary-hover: var(--color-brand-800);
+	--primary-foreground: var(--color-brand-100);
+
+	--secondary: var(--color-secondary-300);
+	--secondary-hover: var(--color-secondary-200);
+	--secondary-foreground: var(--color-secondary-950);
+
+	--accent: var(--color-accent-400);
+	--accent-hover: var(--color-accent-300);
+	--accent-foreground: var(--color-accent-950);
+
+	--success: var(--color-success-400);
+	--success-foreground: var(--color-success-950);
+
+	--warning: var(--color-warning-400);
+	--warning-foreground: var(--color-warning-950);
+
+	--danger: var(--color-danger-400);
+	--danger-foreground: var(--color-danger-950);
+
+	--info: var(--color-info-700);
+	--info-foreground: oklch(0.99 0.005 215);
+
+	--overlay: oklch(0.1 0.01 256 / 0.65);
+	--selection: oklch(0.46 0.21 268 / 0.5);
+
+	--chart-1: var(--color-brand-400);
+	--chart-2: var(--color-accent-400);
+	--chart-3: var(--color-success-400);
+	--chart-4: var(--color-warning-400);
+	--chart-5: var(--color-chart-300);
+}
+
+/* ---------------------------------------------------------------------------
+ * Tailwind utilities (bg-primary, text-muted-foreground, border-border, …)
+ * ------------------------------------------------------------------------- */
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-surface: var(--surface);
+	--color-surface-foreground: var(--surface-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+
+	--color-border: var(--border);
+	--color-border-strong: var(--border-strong);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+
+	--color-primary: var(--primary);
+	--color-primary-hover: var(--primary-hover);
+	--color-primary-foreground: var(--primary-foreground);
+
+	--color-secondary: var(--secondary);
+	--color-secondary-hover: var(--secondary-hover);
+	--color-secondary-foreground: var(--secondary-foreground);
+
+	--color-accent: var(--accent);
+	--color-accent-hover: var(--accent-hover);
+	--color-accent-foreground: var(--accent-foreground);
+
+	--color-success: var(--success);
+	--color-success-foreground: var(--success-foreground);
+
+	--color-warning: var(--warning);
+	--color-warning-foreground: var(--warning-foreground);
+
+	--color-danger: var(--danger);
+	--color-danger-foreground: var(--danger-foreground);
+
+	--color-info: var(--info);
+	--color-info-foreground: var(--info-foreground);
+
+	--color-overlay: var(--overlay);
+
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+}
+
+@layer base {
+	*,
+	::before,
+	::after {
+		border-color: var(--border);
+	}
+
+	html {
+		background-color: var(--background);
+		color: var(--foreground);
+	}
+
+	::selection {
+		background-color: var(--selection);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--ring);
+		outline-offset: 2px;
+	}
+}
