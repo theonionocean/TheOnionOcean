@@ -1,1 +1,1 @@
-export * from "./lib/onion-ui";
+export * from "./lib/components/button/button";
