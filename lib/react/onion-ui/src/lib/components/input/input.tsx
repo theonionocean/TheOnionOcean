@@ -17,8 +17,6 @@ export function Input({
 	);
 }
 
-// TODO: Add badge next to label
-// TODO: Add before and after input addon
 export function FieldInput({
 	label,
 	description,
