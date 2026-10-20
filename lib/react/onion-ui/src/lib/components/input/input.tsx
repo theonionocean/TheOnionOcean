@@ -32,8 +32,13 @@ export function FieldInput({
 	const errorMessageClasses =
 		"text-danger-500 border-danger-500 focus:border-danger-500";
 	return (
-		<Field orientation="vertical">
-			<FieldLabel id={props.id} errorMessage={errorMessage} required={required}>
+		<Field orientation="vertical" className="w-full">
+			<FieldLabel
+				id={props.id}
+				errorMessage={errorMessage}
+				required={required}
+				className="w-full"
+			>
 				<span
 					className={cn(
 						"absolute top-0 left-3 -translate-y-1/2 bg-background px-1.5 font-bold text-sm after:content-['_*']",
@@ -47,12 +52,19 @@ export function FieldInput({
 				<Input
 					id={props.id}
 					{...props}
-					className={errorMessage && errorMessageClasses}
+					className={cn("w-full", errorMessage && errorMessageClasses)}
 				/>
 			</FieldLabel>
-			<FieldDescription className={errorMessage && errorMessageClasses}>
-				{errorMessage || description}
-			</FieldDescription>
+			{errorMessage && (
+				<FieldDescription className={errorMessageClasses}>
+					{errorMessage}
+				</FieldDescription>
+			)}
+			{description && (
+				<FieldDescription className="text-neutral-600 text-sm">
+					{description}
+				</FieldDescription>
+			)}
 		</Field>
 	);
 }
