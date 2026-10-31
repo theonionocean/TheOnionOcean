@@ -8,3 +8,4 @@ export * from "./lib/components/card/card";
 export * from "./lib/components/checkbox/checkbox";
 export * from "./lib/components/checkbox-group/checkbox-group";
 export * from "./lib/components/accordion/accordion";
+export * from "./lib/components/dropdown/dropdown";
