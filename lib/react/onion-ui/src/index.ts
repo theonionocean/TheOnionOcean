@@ -10,3 +10,4 @@ export * from "./lib/components/checkbox-group/checkbox-group";
 export * from "./lib/components/accordion/accordion";
 export * from "./lib/components/dropdown/dropdown";
 export * from "./lib/components/toggle/toggle";
+export * from "./lib/components/toggle-group/toggle-group";
