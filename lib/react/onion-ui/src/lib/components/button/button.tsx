@@ -63,3 +63,30 @@ export function Button({
 		</button>
 	);
 }
+
+export function LinkButton({
+	children,
+	className,
+	variant,
+	size,
+	...props
+}: {
+	children: React.ReactNode;
+	className?: string;
+	variant: ButtonProps["variant"];
+	size: ButtonProps["size"];
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+	return (
+		<a
+			{...props}
+			className={cn(
+				buttonClasses,
+				variantClasses[variant],
+				sizeClasses[size],
+				className,
+			)}
+		>
+			{children}
+		</a>
+	);
+}
